@@ -2,7 +2,7 @@ const questions = [
     {
         question: "What division are the Detroit Lions and Minnesota Vikings in?",
         options: ["AFC North", "NFC North", "AFC South", "NFC South"],
-        correctAnswer: 2
+        correctAnswer: 1
     },
 
     { 
@@ -96,3 +96,20 @@ const questions = [
     },
 
 ]
+
+let currentQuestion = 0; // Index of the current question
+
+function showQuestion() {
+    const questionData = questions[currentQuestionIndex];
+
+    document.getElementById("question").textContent = questionData.question;
+
+    const answerButtons = document.querySelectorAll(".answer");
+    answerButtons.forEach((button, index) => {
+        button.textContent = questionData.options[index];
+        button.classList.remove("correct", "incorrect"); //to reset the colors
+        button.onclick = () => checkAnswer(index);  
+    });
+
+    document.getElementById("progress").textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+}
