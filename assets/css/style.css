@@ -1,3 +1,71 @@
 body h1 {
     color: red;
 }
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: darkgrey; 
+    margin: 0;
+    padding: 0;
+}
+
+.quiz-container {
+    width: 50%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/*progress indicator*/
+#progress {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* question text */
+#question {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/*answer buttons */
+.answer {
+    display: block;
+    width: 80%;
+    padding: 10px;
+    margin: 10px auto;
+    background-color: lightblue;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    color: black;
+    transition: background 0.3s ease;
+}
+
+/*hover effect on answer buttons */
+.answer:hover {
+    background-color: blueviolet; /*Remember to change */
+}
+
+/*Timer */
+#timer {
+    font-size: 15px;
+    margin-top: 30px;
+    font-weight: bold;
+    color: red;
+}
+
+/*Correct answer */
+.correct {
+    background-color: green !important;
+}
+
+/*Wrong answer */
+.incorrect {
+    background-color: red !important;
+}
