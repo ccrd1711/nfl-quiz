@@ -97,11 +97,19 @@ const questions = [
         correctAnswer: 0
     },
 
+    //Bonus question here??
 ];
+
+//Timer function
+let timeLeft = 10; //change this to 5 or 6 seconds??
+let timer; 
+
+//Displays first question and updates from there
 
 let currentQuestionIndex = 0; // Index of the current question
 
 function showQuestion() {
+    console.log("showing question", currentQuestionIndex); //debugging timer issue, comment out later
     const questionData = questions[currentQuestionIndex];
 
     document.getElementById("question").textContent = questionData.question;
@@ -114,9 +122,17 @@ function showQuestion() {
     });
 
     document.getElementById("quiz-progress").textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+
+    //Reset timer when new question loads
+    startTimer();
+    clearInterval(timer);
 }
 
+//Declaring startTimer globally and within function is only way of timer working - tested with console.log
+startTimer();
 showQuestion();
+
+//Checks whether answer is right or wrong 
 
 function checkAnswer(selectedIndex) {
     const questionData = questions[currentQuestionIndex];
@@ -128,13 +144,32 @@ function checkAnswer(selectedIndex) {
         answerButtons[selectedIndex].classList.add("incorrect");
     }
 
-    setTimeout(() => {
-        currentQuestionIndex++;
-        if (currentQuestionIndex < questions.length) {
-            showQuestion();
-        } else {
-            alert("This is the end of the quiz!");
-        }
-    }, 1000);
+    setTimeout(nextQuestion, 1000);
 } 
 
+//Moves to the next question after time runs out
+function nextQuestion() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        showQuestion();
+    } else {
+        alert("This is the end of the quiz!"); //change???
+    }
+}
+
+//Resets timer and displays message when oot 
+function startTimer() {
+    timeLeft = 10;
+    document.getElementById("timer").textContent = `Time left: ${timeLeft}s`;
+
+    timer = setInterval(() => {
+        timeLeft--;
+        document.getElementById("timer").textContent = `Time left: ${timeLeft}s`;
+
+        if (timeLeft === 0) {
+            clearInterval(timer);
+            alert("Time's up! Moving to the next question."); //change or???
+            nextQuestion(); 
+        }
+    }, 1000);
+}
