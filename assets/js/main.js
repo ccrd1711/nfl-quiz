@@ -1,3 +1,5 @@
+//All questions 
+
 const questions = [
     {
         question: "What division are the Detroit Lions and Minnesota Vikings in?",
