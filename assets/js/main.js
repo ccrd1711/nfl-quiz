@@ -95,9 +95,9 @@ const questions = [
         correctAnswer: 0
     },
 
-]
+];
 
-let currentQuestion = 0; // Index of the current question
+let currentQuestionIndex = 0; // Index of the current question
 
 function showQuestion() {
     const questionData = questions[currentQuestionIndex];
@@ -111,5 +111,28 @@ function showQuestion() {
         button.onclick = () => checkAnswer(index);  
     });
 
-    document.getElementById("progress").textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+    document.getElementById("quiz-progress").textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
 }
+
+showQuestion();
+
+function checkAnswer(selectedIndex) {
+    const questionData = questions[currentQuestionIndex];
+    const answerButtons = document.querySelectorAll(".answer");
+
+    if (selectedIndex === questionData.correctAnswer) {
+        answerButtons[selectedIndex].classList.add("correct");
+    } else {
+        answerButtons[selectedIndex].classList.add("incorrect");
+    }
+
+    setTimeout(() => {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+            showQuestion();
+        } else {
+            alert("This is the end of the quiz!");
+        }
+    }, 1000);
+} 
+
