@@ -10,6 +10,37 @@ body {
     padding: 0;
 }
 
+/*Welcome message styling*/
+#welcome-screen {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f8f8fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /*Check this later in accordance to quiz box*/
+}
+
+#welcome-screen h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+#welcome-screen button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border:none;
+    border-radius: 5px;
+    background: #007bff;
+    color: white;
+}
+
+#welcome-screen button:hover {
+    background: #0056b3;
+}
+
 .quiz-container {
     display: none; /* Hides container until difficulty chosen by user */
     width: 50%;
