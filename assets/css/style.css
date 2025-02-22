@@ -41,6 +41,18 @@ body {
     background: #0056b3;
 }
 
+/*Fading styling between welcome screen and quiz container*/
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+/*Quiz container styling*/
 .quiz-container {
     display: none; /* Hides container until difficulty chosen by user */
     width: 50%;

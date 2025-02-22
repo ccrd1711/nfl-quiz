@@ -2,10 +2,30 @@ let timePerQuestion = 10;
 
 function startQuiz(selectedTime) {
     timePerQuestion = selectedTime;
-    document.getElementById("welcome-screen").style.display = "none";
-    document.querySelector(".quiz-container").style.display = "block";
-    currentQuestionIndex = 0;
-    showQuestion();
+    fadeOut(document.getElementById("welcome-screen"), () => {
+        fadeIn(document.querySelector(".quiz-container"));
+        currentQuestionIndex = 0;
+        showQuestion();
+    });
+}
+
+function fadeOut(element, callback) {
+    element.classList.remove("fade-in");
+    element.classList.add("fade-out");
+    setTimeout(() => {
+        element.style.display = "none";
+        if (callback) {
+            callback();
+        }
+    }, 500);
+}
+
+function fadeIn(element) {
+    element.style.display = "block";
+    setTimeout(() => {
+        element.classList.remove("fade-out");
+        element.classList.add("fade-in");
+    }, 10);
 }
 
 //All questions 
