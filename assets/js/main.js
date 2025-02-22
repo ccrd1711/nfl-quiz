@@ -1,4 +1,8 @@
 let timePerQuestion = 10; 
+let timeLeft;
+let timerInterval; 
+let currentQuestionIndex = 0; 
+let score = 0;
 
 function startQuiz(selectedTime) {
     timePerQuestion = selectedTime;
@@ -130,14 +134,9 @@ const questions = [
     //Bonus question here??
 ];
 
-//Timer function
-let timeLeft;
-let timerInterval; 
-let currentQuestionIndex = 0; 
-
 function showQuestion() {
+    console.log("showing question", currentQuestionIndex);
     const questionData = questions[currentQuestionIndex];
-
     document.getElementById("question").textContent = questionData.question;
 
     const answerButtons = document.querySelectorAll(".answer");
@@ -149,8 +148,7 @@ function showQuestion() {
 
     document.getElementById("quiz-progress").textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
 
-    startTimer();
-    
+    startTimer();   
 }
 
 //Checks whether answer is right or wrong 
@@ -161,10 +159,10 @@ function checkAnswer(selectedIndex) {
 
     if (selectedIndex === questionData.correctAnswer) {
         answerButtons[selectedIndex].classList.add("correct");
+        score++;
     } else {
         answerButtons[selectedIndex].classList.add("incorrect");
     }
-
     setTimeout(nextQuestion, 1000);
 } 
 
@@ -174,7 +172,7 @@ function nextQuestion() {
     if (currentQuestionIndex < questions.length) {
         showQuestion();
     } else {
-        alert("This is the end of the quiz!"); //change???
+        showResults();
     }
 }
 
@@ -199,4 +197,28 @@ function startTimer() {
 
 function handleTimeout() {
     nextQuestion();
+}
+
+//Results and restart quiz
+function showResults() {
+    document.querySelector(".quiz-container").classList.add("fade-out");
+    setTimeout(() => {
+        document.querySelector(".quiz-container").style.display = "none";
+        document.getElementById("results-screen").classList.remove("fade-out");
+        document.getElementById("results-screen").classList.add("fade-in");
+        document.getElementById("results-screen").style.display = "block";
+        document.getElementById("score-text").textContent = `You scored ${score} out of ${questions.length}!`;
+    }, 500); //matching duration of CSS transition
+}
+
+function retryQuiz() {
+    document.getElementById("results-screen").classList.add("fade-out");
+    setTimeout(() => {
+        document.getElementById("results-screen").style.display = "none";
+        document.getElementById("welcome-screen").classList.remove("fade-out");
+        document.getElementById("welcome-screen").classList.add("fade-in");
+        document.getElementById("welcome-screen").style.display = "block";
+        score = 0;
+        currentQuestionIndex = 0;
+    }, 500);
 }
