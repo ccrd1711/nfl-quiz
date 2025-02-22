@@ -162,9 +162,6 @@ function nextQuestion() {
 function startTimer() {
     clearInterval(timerInterval);
     timeLeft = timePerQuestion;
-
-    document.getElementById("timer").textContent = timeLeft;
-
     timerInterval = setInterval(() => {
         if (document.querySelector(".quiz-container").style.display !== "block") {
             return;
@@ -175,8 +172,7 @@ function startTimer() {
             handleTimeout();
             return; 
         }
-
-        document.getElementById("timer").textContent = timeLeft;
+        document.getElementById("timer").textContent = `Time left: ${timeLeft} seconds`;
         timeLeft--;
     }, 1000);
 }
