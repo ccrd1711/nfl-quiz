@@ -1,3 +1,13 @@
+// Timer based on difficulty 
+let timePerQuestion = 10; 
+
+function startQuiz(selectedTime) {
+    timePerQuestion = selectedTime;
+    document.getElementById("welcome-screen").style.display = "none";
+    document.querySelector(".quiz-container").style.display = "block";
+    showQuestion();
+}
+
 //All questions 
 
 const questions = [
@@ -159,7 +169,7 @@ function nextQuestion() {
 
 //Resets timer and displays message when oot 
 function startTimer() {
-    timeLeft = 10;
+    timeLeft = timePerQuestion;
     document.getElementById("timer").textContent = `Time left: ${timeLeft}s`;
 
     timer = setInterval(() => {
