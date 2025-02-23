@@ -91,9 +91,11 @@ body {
     transition: background 0.3s ease;
 }
 
-/*hover effect on answer buttons */
+/*hover effect on answer buttons on pointer devices */
+@media (hover: hover) and (pointer: fine) {
 .answer:hover {
     background-color: blueviolet; /*Remember to change */
+    }
 }
 
 /*Timer */
