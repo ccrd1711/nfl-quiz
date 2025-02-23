@@ -6,10 +6,13 @@ let score = 0;
 
 function startQuiz(selectedTime) {
     timePerQuestion = selectedTime;
+    timeLeft = timePerQuestion;
+    document.getElementById("timer").textContent = `Time left: ${timeLeft} seconds`;
     fadeOut(document.getElementById("welcome-screen"), () => {
         fadeIn(document.querySelector(".quiz-container"));
         currentQuestionIndex = 0;
         showQuestion();
+        console.log("Quiz started", timePerQuestion);
     });
 }
 
