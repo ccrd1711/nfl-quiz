@@ -204,13 +204,38 @@ function handleTimeout() {
 
 //Results and restart quiz
 function showResults() {
+    console.log("showResults function called");
     document.querySelector(".quiz-container").classList.add("fade-out");
     setTimeout(() => {
+        console.log("Fading out quiz cont");
         document.querySelector(".quiz-container").style.display = "none";
         document.getElementById("results-screen").classList.remove("fade-out");
         document.getElementById("results-screen").classList.add("fade-in");
         document.getElementById("results-screen").style.display = "block";
+
+        //Score display 
         document.getElementById("score-text").textContent = `You scored ${score} out of ${questions.length}!`;
+        console.log("Score text", score);
+
+        //Determines message based on user score 
+        let message;
+        if (score >= 0 && score <=4) {
+            message = "Flatter than those balls Tom & co. deflated in 2015. Study, then try again!";
+        } else if (score >= 5 && score <= 9) {
+            message = "You embody the NFC South with this performance. Or the Giants. Either way, not great.";
+        } else if (score >= 10 && score <= 13) {
+            message = "You're a wildcard! Like the Raiders, you could be a contender, but you're not quite there yet.";
+        } else if (score >= 14 && score <= 15) {
+            message = "You're like Pete and Russ in Glendale - akmost!";
+        } else if (score === 16) {
+            message = "You're a Super Bowl champ! You know your stuff!";
+        }
+        console.log("Message determined:", message);
+
+        const messageElement = document.getElementById("results-message");
+        messageElement.textContent = message;
+        messageElement.style.display = "block";
+        console.log("Message displayed", messageElement.textContent);
     }, 500); //matching duration of CSS transition
 }
 
