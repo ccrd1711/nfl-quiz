@@ -7,7 +7,7 @@ body, html {
 }
 
 body {
-    background: linear-gradient(to bottom, black, navy, silver);
+    background: linear-gradient(to bottom, black, navy, silver, white);
 }
 
 .wrapper {
@@ -228,8 +228,8 @@ button:hover {
 
 /*Footer Styles */
 .footer {
-    background-color: #222;
-    color: white;
+    background-color: ffffff;
+    color: #222;
     padding: 20px 0;
     text-align: center;
     font-family: arial, sans-serif;
@@ -259,7 +259,7 @@ button:hover {
 }
 
 .social-icons a {
-    color: white;
+    color: black;
     margin: 0 10px;
     display: inline-block;
 }
