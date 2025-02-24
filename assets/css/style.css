@@ -6,6 +6,10 @@ body, html {
     flex-direction: column;
 }
 
+body {
+    background: linear-gradient(to bottom, black, navy, silver);
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -31,7 +35,7 @@ body, html {
 }
 
 body h2 {
-    color: red;
+    color: white;
 }
 
 body {
