@@ -1,5 +1,3 @@
-let timePerQuestion = 10; 
-let timeLeft;
 let timerInterval; 
 let currentQuestionIndex = 0; 
 let score = 0;
@@ -228,7 +226,7 @@ function showResults() {
         } else if (score >= 10 && score <= 13) {
             message = "You're a wildcard! Like the Raiders, you could be a contender, but you're not quite there yet.";
         } else if (score >= 14 && score <= 15) {
-            message = "You're like Pete and Russ in Glendale - akmost!";
+            message = "You're like Pete and Russ in Glendale - almost!";
         } else if (score === 16) {
             message = "You're a Super Bowl champ! You know your stuff!";
         }
