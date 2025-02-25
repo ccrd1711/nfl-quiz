@@ -6,6 +6,9 @@ function startQuiz(selectedTime) {
     timePerQuestion = selectedTime;
     timeLeft = timePerQuestion;
     document.getElementById("timer").textContent = `Time left: ${timeLeft} seconds`;
+
+    fadeOut(document.querySelector(".page-title"));
+
     fadeOut(document.getElementById("welcome-screen"), () => {
         fadeIn(document.querySelector(".quiz-container"));
         currentQuestionIndex = 0;
@@ -13,6 +16,17 @@ function startQuiz(selectedTime) {
         console.log("Quiz started", timePerQuestion);
     });
 }
+
+document.getElementById("rules-toggle").addEventListener("click", (e) => {
+    e.preventDefault();
+    const rulesElement = document.getElementById("rules");
+
+    if (rulesElement.style.display === "none" || rulesElement.classList.contains("fade-out")) {
+        fadeIn(rulesElement);
+    } else {
+        fadeOut(rulesElement);
+    }
+});
 
 function fadeOut(element, callback) {
     element.classList.remove("fade-in");
