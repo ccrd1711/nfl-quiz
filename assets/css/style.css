@@ -7,7 +7,7 @@ body, html {
 }
 
 body {
-    background: linear-gradient(to bottom, black, navy, silver, white);
+    background: linear-gradient(to bottom, black, rgb(0, 0, 24), navy, rgb(55, 55, 204), silver, white);
 }
 
 .wrapper {
@@ -53,7 +53,7 @@ body {
     text-align: center;
     padding: 20px;
     border-radius: 10px;
-    background: #f8f8fa;
+    background: rgb(40, 106, 182);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /*Check this later in accordance to quiz box*/
 }
 
@@ -69,7 +69,7 @@ body {
     cursor: pointer;
     border:none;
     border-radius: 5px;
-    background: #007bff;
+    background: #cdd8e4;
     color: white;
 }
 
@@ -94,7 +94,7 @@ body {
     width: 50%;
     margin: 50px auto;
     padding: 20px;
-    background-color: white;
+    background-color: rgb(40, 182, 182);
     border-radius: 10px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
@@ -262,6 +262,7 @@ button:hover {
     color: black;
     margin: 0 10px;
     display: inline-block;
+    font-size: 25px; 
 }
 
 .footer p {
