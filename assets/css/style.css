@@ -7,7 +7,10 @@ body, html {
 }
 
 body {
-    background: linear-gradient(to bottom, black, rgb(0, 0, 24), navy, rgb(55, 55, 204), silver, white);
+    background-image: url(../images/nfl\ floodlights.jpg);
+    background-size: cover;
+    background-position: center;
+    /* linear-gradient(to bottom, black, rgb(0, 0, 24), navy, rgb(55, 55, 204), silver, white); */
 }
 
 .wrapper {
@@ -20,13 +23,14 @@ body {
 .page-title {
     padding-top: 20px;
     padding-bottom: 50px;
-    background: rgb(40, 106, 182);
+    background: rgb(231, 239, 250);
     width: 50%;
     border-radius: 10px;
     margin-top: 100px;
     margin-bottom: 100px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
+    opacity: 0.5; /*Putting here during testing to position background image*/
 }
 
 #rules-toggle {
@@ -46,7 +50,7 @@ body {
 }
 
 body h2 {
-    color: white;
+    color: rgb(8, 8, 8);
 }
 
 body {
@@ -64,8 +68,9 @@ body {
     text-align: center;
     padding: 20px;
     border-radius: 10px;
-    background: rgb(40, 106, 182);
+    background: rgb(226, 233, 241);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /*Check this later in accordance to quiz box*/
+    opacity: 0.6; /*Putting here during testing to position background image*/
 }
 
 #welcome-screen h1 {
@@ -282,3 +287,29 @@ button:hover {
 }
 
 /*Media queries */
+
+/*Mobiles and small screens */
+@media screen and (max-width: 576px) {
+    .quiz-container {
+        width: 80%;
+    }
+
+    .signup-container {
+        width: 90%;
+    }
+
+    .page-title {
+        margin-top: 40px;
+        margin-bottom:40px;
+        font-size: 1.2em;
+    }
+
+    #welcome-screen {
+        margin-bottom: 50px;
+        font-size: 0.5em;
+    }
+
+    #results-screen {
+        margin-top: 100px; 
+    }
+}
