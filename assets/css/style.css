@@ -32,6 +32,14 @@ body {
     text-align: center;
 }
 
+.page-title h2 {
+    color:white;    
+}
+
+.page-title li {
+    color: white;
+}
+
 #rules-toggle {
     color: white;
 }
@@ -70,6 +78,8 @@ body {
     background: rgb(22, 103, 216);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /*Check this later in accordance to quiz box*/
     margin-top: 320px;
+    position: fixed; /*Stops welcome moving down when the rules are clicked to open*/
+    bottom: 100px; /*Keeps above footer */
 }
 
 #welcome-screen h1 {
@@ -84,7 +94,7 @@ body {
     cursor: pointer;
     border:none;
     border-radius: 5px;
-    background: #cdd8e4;
+    background: #020a13;
     color: white;
 }
 
@@ -245,8 +255,6 @@ button:hover {
 
 /*Footer Styles */
 .footer {
-    background-color: ffffff;
-    color: #222;
     padding: 20px 0;
     text-align: center;
     font-family: arial, sans-serif;
@@ -276,7 +284,7 @@ button:hover {
 }
 
 .social-icons a {
-    color: ffffff;
+    color: white;
     margin: 0 10px;
     display: inline-block;
     font-size: 25px; 
@@ -322,6 +330,40 @@ button:hover {
 
 /*Mobiles and small screens */
 @media screen and (max-width: 576px) {
+    /* nav bar positioning */
+    .navbar-toggler {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: auto;
+    }
+
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-collapse {
+        position: absolute;
+        top: 50px;
+        right: 0px;
+        width: auto;
+        min-width: 100px;
+        z-index: 1; 
+        background-color: black;
+        padding: 5px 10px;
+        border-radius: 6px;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-item {
+        margin: 5px 0;
+    }
+
     .quiz-container {
         width: 80%;
     }
