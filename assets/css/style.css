@@ -23,14 +23,13 @@ body {
 .page-title {
     padding-top: 20px;
     padding-bottom: 50px;
-    background: rgb(231, 239, 250);
+    background: rgb(22, 103, 216);
     width: 50%;
     border-radius: 10px;
-    margin-top: 100px;
+    margin-top: 20px; /* Leave here or not? To show NFL badge */
     margin-bottom: 100px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    opacity: 0.5; /*Putting here during testing to position background image*/
 }
 
 #rules-toggle {
@@ -68,9 +67,9 @@ body {
     text-align: center;
     padding: 20px;
     border-radius: 10px;
-    background: rgb(226, 233, 241);
+    background: rgb(22, 103, 216);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /*Check this later in accordance to quiz box*/
-    opacity: 0.6; /*Putting here during testing to position background image*/
+    margin-top: 320px;
 }
 
 #welcome-screen h1 {
@@ -179,7 +178,7 @@ body {
 }
 
 .signup-container {
-    background-color: #ffffff;
+    background-color: #161515;
     margin-top: 100px;  
     padding: 20px;
     width: 600px;
@@ -188,13 +187,15 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.signup-container h1 {
+.signup-container h3 {
     text-align: center;
     margin-bottom: 20px;
+    color: white;
 }
 
 .form-group {
     margin-bottom: 15px;
+    color:white;
 }
 
 .form-group label {
@@ -275,7 +276,7 @@ button:hover {
 }
 
 .social-icons a {
-    color: black;
+    color: ffffff;
     margin: 0 10px;
     display: inline-block;
     font-size: 25px; 
@@ -283,7 +284,38 @@ button:hover {
 
 .footer p {
     margin: 0;
-    font-size: 14px;   
+    font-size: 14px;  
+    color: white;    
+}
+
+.reg-footer /* Different background so different stlying */ {
+    background-color: ffffff;
+    color: #222;
+    padding: 20px 0;
+    text-align: center;
+    font-family: arial, sans-serif;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.reg-footer .reg-footer-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.reg-social-icons {
+    margin-bottom: 10px;
+}
+
+.reg-social-icons a {
+    color: black;
+    margin: 0 10px;
+    display: inline-block;
+    font-size: 25px; 
 }
 
 /*Media queries */
