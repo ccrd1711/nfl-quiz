@@ -1,6 +1,8 @@
 let timerInterval; 
 let currentQuestionIndex = 0; 
 let score = 0;
+let timePerQuestion;
+let timeLeft;
 
 function startQuiz(selectedTime) {
     timePerQuestion = selectedTime;
@@ -40,10 +42,12 @@ function fadeOut(element, callback) {
 }
 
 function fadeIn(element) {
+    console.log("Fading in:", element); //delete after testing
     element.style.display = "block";
     setTimeout(() => {
         element.classList.remove("fade-out");
         element.classList.add("fade-in");
+        console.log("Opacity after fade:", getComputedStyle(element).opacity); //delete after testing
     }, 10);
 }
 
@@ -264,3 +268,26 @@ function retryQuiz() {
         currentQuestionIndex = 0;
     }, 500);
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("DOM loaded"); //delete after testing 
+    const pageTitleNav = document.querySelector(".page-title");
+    const welcomeScreen = document.getElementById("welcome-screen");
+    const startButton = document.getElementById("start-button");
+
+    //fades in the elements
+    function fadeInNav() {
+        console.log("Fading in nav"); //delete after testing
+        pageTitleNav.style.opacity = "1";
+    }
+
+    //Timeout
+    setTimeout(fadeInNav, 3000);
+
+    //Start button event listener
+    startButton.addEventListener("click", function() {
+        fadeOut(pageTitleNav, function() {
+            fadeIn(welcomeScreen);
+        });
+    });
+});

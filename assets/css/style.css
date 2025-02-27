@@ -30,6 +30,8 @@ body {
     margin-bottom: 100px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
+    opacity: 0; /*initially hidden */
+    transition: opacity 0.5s ease-in-out; /*Fade transition*/
 }
 
 .page-title h2 {
@@ -80,6 +82,8 @@ body {
     margin-top: 320px;
     position: fixed; /*Stops welcome moving down when the rules are clicked to open*/
     bottom: 100px; /*Keeps above footer */
+    opacity: 1; /*initially hidden */
+    transition: opacity 0.5s; /*Fade transition*/
 }
 
 #welcome-screen h1 {
@@ -387,3 +391,5 @@ button:hover {
         margin-top: 100px; 
     }
 }
+
+/* IMPORTANT: Global styling for entering-website transition, delete all if not wanted */
