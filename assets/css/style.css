@@ -7,10 +7,12 @@ body, html {
 }
 
 body {
-    background-image: url(../images/nfl\ floodlights.jpg);
+    background-image: url(../images/nfl\ stadium.jpg); 
     background-size: cover;
-    background-position: center;
-    /* linear-gradient(to bottom, black, rgb(0, 0, 24), navy, rgb(55, 55, 204), silver, white); */
+    background-position: center; 
+    /* background: linear-gradient(to bottom, black, rgb(0, 0, 24), navy, rgb(55, 55, 204), silver, white); 
+    Keep this as a backup 
+    */
 }
 
 .wrapper {
@@ -26,12 +28,12 @@ body {
     background: rgb(22, 103, 216);
     width: 50%;
     border-radius: 10px;
-    margin-top: 20px; /* Leave here or not? To show NFL badge */
+    margin-top: 60px; 
     margin-bottom: 100px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     opacity: 0; /*initially hidden */
-    transition: opacity 0.5s ease-in-out; /*Fade transition*/
+    transition: opacity 0.8s ease-in-out; /*Fade transition*/
 }
 
 .page-title h2 {
@@ -79,11 +81,11 @@ body {
     border-radius: 10px;
     background: rgb(22, 103, 216);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /*Check this later in accordance to quiz box*/
-    margin-top: 320px;
-    position: fixed; /*Stops welcome moving down when the rules are clicked to open*/
+    margin-top: 60px;
+    /* position: fixed; Keeps in the same place as rules when that disappears */
     bottom: 100px; /*Keeps above footer */
     opacity: 1; /*initially hidden */
-    transition: opacity 0.5s; /*Fade transition*/
+    transition: opacity 0.8s; /*Fade transition*/
 }
 
 #welcome-screen h1 {
@@ -121,9 +123,10 @@ body {
 .quiz-container {
     display: none; /* Hides container until difficulty chosen by user */
     width: 50%;
+    max-height: 400px;
     margin: 50px auto;
-    padding: 20px;
-    background-color: rgb(40, 182, 182);
+    padding: 10px;
+    background-color: rgb(250, 250, 250);
     border-radius: 10px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
@@ -167,7 +170,7 @@ body {
 /*Timer */
 #timer {
     font-size: 15px;
-    margin-top: 30px;
+    margin-top: 20px;
     font-weight: bold;
     color: red;
 }
@@ -266,6 +269,7 @@ button:hover {
     position: fixed;
     bottom: 0;
     left: 0;
+    background-color: black;
 }
 
 .footer .footer-box {
