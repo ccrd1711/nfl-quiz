@@ -388,7 +388,7 @@ button:hover {
 
     .quiz-container {
         width: 80%;
-        min-height: 300px;
+        min-height: 450px;
     }
 
     #question {
@@ -456,6 +456,11 @@ button:hover {
 
     #question {
         font-size: 18px;
+    }
+
+    .quiz-container {
+        width: 50%;
+        min-height: 450px;
     }
 
     #answers {
