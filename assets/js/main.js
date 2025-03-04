@@ -186,11 +186,8 @@ function checkAnswer(selectedIndex) {
 } 
 
 //Remove the highlighting memory from pressing an answer - mobile issue 
-document.querySelectorAll(".answer").forEach((button) => {
-    button.addEventListener("click", () => {
-        button.style.backgroundColor = "";
-        button.style.color = "";
-    });
+document.querySelectorAll(".answer").forEach(button => {
+    button.blur();
 });
 
 //Moves to the next question after time runs out
