@@ -185,11 +185,6 @@ function checkAnswer(selectedIndex) {
     setTimeout(nextQuestion, 1000);
 } 
 
-//Remove the highlighting memory from pressing an answer - mobile issue 
-document.querySelectorAll(".answer").forEach(button => {
-    button.blur();
-});
-
 //Moves to the next question after time runs out
 function nextQuestion() {
     currentQuestionIndex++;
@@ -200,7 +195,12 @@ function nextQuestion() {
     }
 }
 
-//Resets timer and displays message when oot 
+//Remove the highlighting memory from pressing an answer - mobile issue 
+document.querySelectorAll(".answer").forEach(button => {
+    button.blur();
+});
+
+//Resets timer when oot 
 function startTimer() {
     clearInterval(timerInterval);
     timeLeft = timePerQuestion;

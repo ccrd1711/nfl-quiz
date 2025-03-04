@@ -179,8 +179,8 @@ body {
     }
  }
 
- .answer:focus {
-    outline:none;
+ .answer:focus-visible {
+    background-color: initial;
  }
 
 /*Timer */
