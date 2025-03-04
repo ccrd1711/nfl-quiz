@@ -84,7 +84,7 @@ body {
     transition: opacity 0.8s; /*Fade transition*/
 }
 
-#welcome-screen h3 {
+#welcome-screen h5 {
     font-size: 2rem;
     margin-bottom: 10px;
     color: white;
@@ -413,6 +413,10 @@ button:hover {
     #welcome-screen {
         margin-bottom: 50px;
         font-size: 0.5em;
+    }
+
+    #welcome-screen h5 {
+        font-size: 18px;
     }
 
     #results-screen {
