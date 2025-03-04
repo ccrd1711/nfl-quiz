@@ -164,6 +164,12 @@ function showQuestion() {
         button.style.color = ""; //Reset text colour - mobile bug fix - both needed to clear previous answer styling
         button.onclick = () => checkAnswer(index);  
     });
+//Clears focus from answer buttons after click - mobile issue - test 
+    setTimeout(() => {
+        document.querySelector(".answer").forEach(button => {
+            button.blur();
+        });
+    }, 10);
 
     document.getElementById("quiz-progress").textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
 
@@ -196,9 +202,9 @@ function nextQuestion() {
 }
 
 //Remove the highlighting memory from pressing an answer - mobile issue 
-document.querySelectorAll(".answer").forEach(button => {
-    button.style.backgroundColor = ""; //resets colour mobile issue
-});
+//document.querySelectorAll(".answer").forEach(button => {
+//    button.style.backgroundColor = ""; //resets colour mobile issue
+//});
 
 //Resets timer when oot 
 function startTimer() {
