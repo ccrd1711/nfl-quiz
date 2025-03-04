@@ -162,7 +162,6 @@ function showQuestion() {
         button.classList.remove("correct", "incorrect"); 
         button.style.backgroundColor = ""; //Reset background colour - mobile bug fix
         button.style.color = ""; //Reset text colour - mobile bug fix - both needed to clear previous answer styling
-        button.blur(); //Clears focus from answer buttons after click - mobile issue - test
         button.onclick = () => checkAnswer(index);  
     });
 
@@ -171,6 +170,7 @@ function showQuestion() {
         answerButtons.forEach(button => {
             button.blur();
             button.classList.remove("hover", "focus"); //Remove any lingering states
+            button.style.pointerEvents = "auto"; //Re-enable pointer events
         });
     }, 10);
 
