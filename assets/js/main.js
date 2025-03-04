@@ -197,7 +197,7 @@ function nextQuestion() {
 
 //Remove the highlighting memory from pressing an answer - mobile issue 
 document.querySelectorAll(".answer").forEach(button => {
-    button.blur();
+    button.style.backgroundColor = ""; //resets colour mobile issue
 });
 
 //Resets timer when oot 
