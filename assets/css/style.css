@@ -179,9 +179,12 @@ body {
     }
  }
 
- .answer:focus-visible {
-    background-color: initial;
- }
+.answer:focus,
+.answer:active {
+    outline: none;
+    box-shadow: none;
+    background-color: rgb(189, 187, 187);
+}
 
 /*Timer */
 #timer {
