@@ -42,12 +42,10 @@ function fadeOut(element, callback) {
 }
 
 function fadeIn(element) {
-    console.log("Fading in:", element); //delete after testing
     element.style.display = "block";
     setTimeout(() => {
         element.classList.remove("fade-out");
         element.classList.add("fade-in");
-        console.log("Opacity after fade:", getComputedStyle(element).opacity); //delete after testing
     }, 10);
 }
 
@@ -186,6 +184,14 @@ function checkAnswer(selectedIndex) {
     }
     setTimeout(nextQuestion, 1000);
 } 
+
+//Remove the highlighting memory from pressing an answer - mobile issue 
+document.querySelectorAll(".answer").forEach((button) => {
+    button.addEventListener("click", () => {
+        button.style.backgroundColor = "";
+        button.style.color = "";
+    });
+});
 
 //Moves to the next question after time runs out
 function nextQuestion() {
