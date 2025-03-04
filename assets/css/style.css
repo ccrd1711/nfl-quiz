@@ -257,9 +257,9 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+/* button:hover {
     background-color: #e9900b;
-}
+} */
 
 /* Results screen styling */
 #results-screen {
