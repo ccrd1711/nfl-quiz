@@ -179,6 +179,10 @@ body {
     }
  }
 
+ .answer:focus {
+    outline:none;
+ }
+
 /*Timer */
 #timer {
     font-size: 15px;
