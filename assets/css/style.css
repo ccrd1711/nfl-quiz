@@ -267,6 +267,11 @@ button:hover {
     
 }
 
+#results-screen h2,
+#results-screen p {
+    color: white;
+}
+
 #results-message {
     display: block;
     margin-top: 10px;
