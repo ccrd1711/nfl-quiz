@@ -1,18 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
+.navbar {
+    /* position: fixed; */
+    top:0;
+    left:0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #222;
+    border-bottom: 1px solid #222;
+    margin-top: 0;
+    padding-top: 0;
+    font-family: Bebas Neue,  sans-serif;
+    font-size: 24px;
+}
+
+body {
+    background-color: darkgrey; 
+    margin: 0;
+    padding: 0;
+    background-image: url(../images/nfl\ stadium.jpg); 
+    background-size: cover;
+    background-position: center; 
+}
+
 body, html {
     margin:0;
     padding: 0;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-body {
-    background-image: url(../images/nfl\ stadium.jpg); 
-    background-size: cover;
-    background-position: center; 
 }
 
 .wrapper {
@@ -26,7 +41,7 @@ body {
     padding-top: 20px;
     padding-bottom: 50px;
     /* background: rgb(42, 43, 44); keep or not?? Mentor meeting */
-    width: 65%;
+    width: 50%;
     border-radius: 10px;
     margin-top: 50px; 
     margin-bottom: 100px;
@@ -46,6 +61,12 @@ body {
     /* color: white; */
     color: black;
     font-family: Oswald, sans-serif; 
+    text-align: center;
+    font-size: 24px;
+}
+
+.page-title ul {
+    list-style-position: inside; /*Keeps bullet points beside text rather than container edge */
 }
 
 #rules-toggle {
@@ -61,29 +82,7 @@ body {
     width: 50%;
 }
 
-.navbar {
-    /* position: fixed; */
-    top:0;
-    left:0;
-    width: 100%;
-    z-index: 1000;
-    background-color: #222;
-    border-bottom: 1px solid #222;
-    margin-top: 0;
-    padding-top: 0;
-    font-family: Bebas Neue,  sans-serif;
-    font-size: 24px;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: darkgrey; 
-    margin: 0;
-    padding: 0;
-}
-
-/*Welcome message styling*/
+/*Welcome message styling - difficulty choice screen*/
 #welcome-screen {
     font-family: Oswald, sans-serif; 
     width: 50%;
@@ -109,7 +108,7 @@ body {
 #welcome-screen button {
     padding: 10px 20px;
     margin: 10px;
-    font-size: 1.2rem;
+    font-size: 24px;
     cursor: pointer;
     border:none;
     border-radius: 5px;
@@ -150,6 +149,15 @@ body {
     font-family: Bebas Neue, sans-serif;
 }
 
+/*Timer */
+#timer {
+    font-size: 25px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #eb722b;
+    text-align: center;
+}
+
 /*progress indicator*/
 #quiz-progress {
     font-size: 24px;
@@ -158,10 +166,11 @@ body {
 
 /* question text */
 #question {
-    font-size: 28px;
+    font-size: 35px;
     font-weight: bold;
     margin-bottom: 20px;
     text-align:center;
+    color: #eb722b;
 }
 
 /*answer buttons */
@@ -189,7 +198,6 @@ body {
     margin: auto;
 }
 
-
 /*hover effect on answer buttons on pointer devices */
  @media (hover: hover) and (pointer: fine) {
 .answer:hover {
@@ -202,14 +210,6 @@ body {
     outline: none;
     box-shadow: none;
     background-color: rgb(189, 187, 187);
-}
-
-/*Timer */
-#timer {
-    font-size: 25px;
-    margin-top: 20px;
-    font-weight: bold;
-    color: red;
 }
 
 /*Correct answer */
@@ -242,12 +242,21 @@ body {
 }
 
 .signup-container h3 {
+    font-family: Oswald, sans-serif;
+    font-size: 36px;
     text-align: center;
     margin-bottom: 20px;
     color: white;
 }
 
+.signup-container button {
+    font-family: Bebas Neue, sans-serif;
+    font-size: 28px;
+}
+
 .form-group {
+    font-family: Oswald, sans-serif;
+    font-size: 28px;
     margin-bottom: 15px;
     color:white;
 }
@@ -273,7 +282,7 @@ button {
     color: black;
     font-size: 16px;
     cursor: pointer;
-}
+} 
 
 /* Results screen styling */
 #results-screen {
@@ -292,7 +301,7 @@ button {
 #results-screen p {
     color: white;
     font-family: Bebas Neue, sans-serif;
-    font-size: 24px;
+    font-size: 28px;
 }
 
 #results-message {
@@ -303,13 +312,13 @@ button {
 }
 
 #results-screen #score-text {
-    font-size: 32px;
+    font-size: 36px;
     color: #eb722b;
 }
 
 #results-screen button {
     font-family: Bebas Neue, sans-serif;
-    font-size: 24px;
+    font-size: 28px;
 }
 
 /*Footer Styles */
