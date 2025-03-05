@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 body, html {
     margin:0;
     padding: 0;
@@ -10,9 +13,6 @@ body {
     background-image: url(../images/nfl\ stadium.jpg); 
     background-size: cover;
     background-position: center; 
-    /* background: linear-gradient(to bottom, black, rgb(0, 0, 24), navy, rgb(55, 55, 204), silver, white); 
-    Keep this as a backup 
-    */
 }
 
 .wrapper {
@@ -25,31 +25,44 @@ body {
 .page-title {
     padding-top: 20px;
     padding-bottom: 50px;
-    background: rgb(42, 43, 44);
-    width: 50%;
+    /* background: rgb(42, 43, 44); keep or not?? Mentor meeting */
+    width: 65%;
     border-radius: 10px;
     margin-top: 50px; 
     margin-bottom: 100px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); keep or not?? */
     text-align: center;
-    opacity: 0; /*initially hidden */
+    opacity: 0; /* initially hidden */
     transition: opacity 0.8s ease-in-out; /*Fade transition*/
 }
 
 .page-title h2 {
-    color:white;    
+    /* color:white; */
+    color: black;   
+    font-family: Oswald, sans-serif; 
 }
 
 .page-title li {
-    color: white;
+    /* color: white; */
+    color: black;
+    font-family: Oswald, sans-serif; 
 }
 
 #rules-toggle {
-    color: white;
+    /* color: white; ??? */
+    color: black;
+    font-family: Oswald, sans-serif; 
+    font-size: 24px;
+}
+
+#start-button {
+    font-family: Oswald, sans-serif; 
+    font-size: 24px;
+    width: 50%;
 }
 
 .navbar {
-    position: fixed;
+    /* position: fixed; */
     top:0;
     left:0;
     width: 100%;
@@ -58,6 +71,8 @@ body {
     border-bottom: 1px solid #222;
     margin-top: 0;
     padding-top: 0;
+    font-family: Bebas Neue,  sans-serif;
+    font-size: 24px;
 }
 
 body {
@@ -70,6 +85,7 @@ body {
 
 /*Welcome message styling*/
 #welcome-screen {
+    font-family: Oswald, sans-serif; 
     width: 50%;
     margin: auto;
     text-align: center;
@@ -131,17 +147,18 @@ body {
 .quiz-container p,
 .quiz-container h3 {
     color: white;
+    font-family: Bebas Neue, sans-serif;
 }
 
 /*progress indicator*/
-#progress {
-    font-size: 16px;
+#quiz-progress {
+    font-size: 24px;
     margin-bottom: 10px;
 }
 
 /* question text */
 #question {
-    font-size: 25px;
+    font-size: 28px;
     font-weight: bold;
     margin-bottom: 20px;
     text-align:center;
@@ -158,12 +175,13 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 28px;
     color: black;
     transition: background 0.3s ease;
 }
 
 #answers {
+    font-family: Bebas Neue, sans-serif;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
@@ -188,7 +206,7 @@ body {
 
 /*Timer */
 #timer {
-    font-size: 15px;
+    font-size: 25px;
     margin-top: 20px;
     font-weight: bold;
     color: red;
@@ -257,10 +275,6 @@ button {
     cursor: pointer;
 }
 
-/* button:hover {
-    background-color: #e9900b;
-} */
-
 /* Results screen styling */
 #results-screen {
     width: 50%;
@@ -277,6 +291,8 @@ button {
 #results-screen h2,
 #results-screen p {
     color: white;
+    font-family: Bebas Neue, sans-serif;
+    font-size: 24px;
 }
 
 #results-message {
@@ -284,6 +300,16 @@ button {
     margin-top: 10px;
     color: black;
     font-size: 1em;
+}
+
+#results-screen #score-text {
+    font-size: 32px;
+    color: #eb722b;
+}
+
+#results-screen button {
+    font-family: Bebas Neue, sans-serif;
+    font-size: 24px;
 }
 
 /*Footer Styles */
@@ -412,7 +438,7 @@ button {
     }
 
     .page-title {
-        margin-top: 40px;
+        margin-top: 50px;
         margin-bottom:40px;
         font-size: 1.2em;
         width: 80%;
@@ -430,6 +456,7 @@ button {
 
     #results-screen {
         margin-top: 100px; 
+        width: 80%;
     }
 
     #answers {
@@ -478,7 +505,7 @@ button {
 
     .quiz-container {
         width: 50%;
-        min-height: 450px;
+        min-height: 470px;
     }
 
     #answers {

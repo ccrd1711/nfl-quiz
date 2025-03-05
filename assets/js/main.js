@@ -269,6 +269,14 @@ function showResults() {
     }, 500); //matching duration of CSS transition
 }
 
+document.getElementById("easy-mode").addEventListener("click", function() {
+    startQuiz(10);
+});
+
+document.getElementById("hard-mode").addEventListener("click", function() {
+    startQuiz(5);
+});
+
 function retryQuiz() {
     document.getElementById("results-screen").classList.add("fade-out");
     setTimeout(() => {
