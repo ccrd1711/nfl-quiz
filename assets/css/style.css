@@ -785,16 +785,16 @@ button {
     }
 
     #quiz-progress {
-        font-size: 16px;
+        font-size: 20px;
     }
 
     #question {
-        font-size: 34px;
+        font-size: 36px;
     }
 
     .quiz-container {
         width: 90%;
-        min-height: 480px;
+        min-height: 500px;
     }
 
     #answers {
