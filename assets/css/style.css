@@ -433,6 +433,9 @@ button {
 
     .page-title {
         padding-top: 0;
+        margin-top: 50px;
+        margin-bottom:40px;
+        width: 90%;
     }
 
 
@@ -446,6 +449,15 @@ button {
 
     .page-title li {
         font-size: 12px;
+    }
+
+    #welcome-screen {
+        margin-bottom: 50px;
+        width: 90%;
+    }
+
+    #welcome-screen h5 {
+        font-size: 28px;
     }
 
     #start-button {
@@ -462,6 +474,34 @@ button {
 
     #timer {
         font-size: 16px;
+    }
+
+    .quiz-container {
+        width: 90%;
+        min-height: 450px;
+    }
+
+    #question {
+        font-size: 28px;
+        margin-bottom: 0;
+    }
+
+    #results-screen {
+        margin-top: 100px; 
+        width: 80%;
+    }
+
+    #quiz-progress {
+        font-size: 20px;
+    }
+
+    #answers {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+        gap: 0;
+    }
+
+    .answer {
+        font-size: 20px;
     }
 }
 
