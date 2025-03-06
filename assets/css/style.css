@@ -274,7 +274,7 @@ body, html {
 }
 
 button {
-    width: 100%;
+    width: 95%;
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -439,11 +439,11 @@ button {
     }
 
     .page-title h2 {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     #rules-toggle {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     #rules ul {
@@ -455,21 +455,25 @@ button {
         font-size: 12px;
     }
 
+    #start-button {
+        font-size: 18px;
+    }
+
     #welcome-screen {
         margin-bottom: 50px;
         width: 90%;
     }
 
     #welcome-screen h5 {
-        font-size: 28px;
+        font-size: 24px;
     }
 
-    #start-button {
-        font-size: 18px;
+    #welcome-screen button {
+        font-size: 20px;
     }
 
     #timer {
-        font-size: 16px;
+        font-size: 18px;
         margin-top: 0;
     }
 
@@ -479,7 +483,7 @@ button {
     }
 
     #question {
-        font-size: 20px;
+        font-size: 22px;
         margin-bottom: 0;
     }
 
