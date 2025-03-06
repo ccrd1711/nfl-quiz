@@ -42,7 +42,7 @@ body, html {
     padding-bottom: 50px;
     /* background: rgb(42, 43, 44); keep or not?? Mentor meeting */
     width: 50%;
-    border-radius: 10px;
+    /* border-radius: 10px; Keep if reimplementing the background*/
     margin-top: 50px; 
     margin-bottom: 100px;
     /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); keep or not?? */
@@ -452,7 +452,7 @@ button {
     }
 
     .page-title li {
-        font-size: 12px;
+        font-size: 16px;
     }
 
     #start-button {
@@ -488,7 +488,7 @@ button {
     }
 
     #results-screen {
-        margin-top: 0; 
+        margin-top: 70px; 
         width: 80%;
     }
 
