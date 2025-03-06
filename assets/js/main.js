@@ -131,7 +131,7 @@ const questions = [
     },
 
     {
-        question: "What division are the Washington Football Team and New York Giants in?",
+        question: "What division are the Washington Commanders and New York Giants in?",
         options: ["AFC East", "NFC East", "NFC West", "NFC South"],
         correctAnswer: 1
     },

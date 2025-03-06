@@ -433,15 +433,6 @@ button {
         margin: 5px 0;
     }
 
-    .quiz-container {
-        width: 80%;
-        min-height: 450px;
-    }
-
-    #question {
-        font-size: 18px;
-    }
-
     .signup-container {
         width: 90%;
     }
@@ -449,18 +440,39 @@ button {
     .page-title {
         margin-top: 50px;
         margin-bottom:40px;
-        font-size: 1.2em;
-        width: 80%;
+        width: 90%;
+    }
+
+    .page-title h2 {
+        font-size: 36px;
+    }
+
+    .page-title p {
+        font-size: 14px;
+    }
+
+    .page-title li {
+        font-size: 18px;
     }
 
     #welcome-screen {
         margin-bottom: 50px;
         font-size: 0.5em;
-        width: 80%;
+        width: 90%;
     }
 
     #welcome-screen h5 {
-        font-size: 18px;
+        font-size: 28px;
+    }
+
+    .quiz-container {
+        width: 90%;
+        min-height: 450px;
+    }
+
+    #question {
+        font-size: 28px;
+        margin-bottom: 0;
     }
 
     #results-screen {
@@ -468,9 +480,22 @@ button {
         width: 80%;
     }
 
+    #quiz-progress {
+        font-size: 20px;
+    }
+
     #answers {
         grid-template-columns: 1fr; /* Single column layout for smaller screens */
         gap: 0;
+    }
+
+    .answer {
+        font-size: 20px;
+    }
+
+    #timer {
+        margin-top: 0;
+        font-size: 20px;
     }
 }
 
