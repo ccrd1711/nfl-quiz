@@ -438,13 +438,17 @@ button {
         width: 90%;
     }
 
-
     .page-title h2 {
         font-size: 20px;
     }
 
     #rules-toggle {
         font-size: 14px;
+    }
+
+    #rules ul {
+        list-style-type: none;
+        padding-left: 0;
     }
 
     .page-title li {
@@ -464,16 +468,9 @@ button {
         font-size: 18px;
     }
 
-    #quiz-progress {
-        font-size: 16px;
-    }
-
-    #question {
-        font-size: 20px;
-    }
-
     #timer {
         font-size: 16px;
+        margin-top: 0;
     }
 
     .quiz-container {
@@ -482,7 +479,7 @@ button {
     }
 
     #question {
-        font-size: 28px;
+        font-size: 20px;
         margin-bottom: 0;
     }
 
@@ -492,7 +489,7 @@ button {
     }
 
     #quiz-progress {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     #answers {
@@ -501,7 +498,7 @@ button {
     }
 
     .answer {
-        font-size: 20px;
+        font-size: 18px;
     }
 }
 
