@@ -474,7 +474,7 @@ button {
 
     #timer {
         font-size: 18px;
-        margin-top: 0;
+        margin-top: 10px;
     }
 
     .quiz-container {
@@ -488,7 +488,7 @@ button {
     }
 
     #results-screen {
-        margin-top: 100px; 
+        margin-top: 0; 
         width: 80%;
     }
 
@@ -502,7 +502,25 @@ button {
     }
 
     .answer {
-        font-size: 18px;
+        font-size: 22px;
+    }
+
+    .signup-container {
+        margin-top: 70px;
+        width: 0;
+    }
+
+    .signup-container h3 {
+        font-size: 26px;
+    }
+
+    .signup-container button {
+        font-size: 20px;
+        width: 100%;
+    }
+
+    .form-group {
+        font-size: 20px;
     }
 }
 
