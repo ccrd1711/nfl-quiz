@@ -785,7 +785,7 @@ button {
     }
 
     #question {
-        font-size: 18px;
+        font-size: 32px;
     }
 
     .quiz-container {
@@ -796,6 +796,10 @@ button {
     #answers {
         grid-template-columns: 1fr; /* Single column layout for smaller screens */
         gap: 0;
+    }
+
+    .answer {
+        font-size: 24px;
     }
 
     #timer {
