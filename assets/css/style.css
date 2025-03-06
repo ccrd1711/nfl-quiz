@@ -2,17 +2,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 .navbar {
-    /* position: fixed; */
     top:0;
     left:0;
     width: 100%;
     z-index: 1000;
-    background-color: #222;
+    background-color: black;
     border-bottom: 1px solid #222;
     margin-top: 0;
     padding-top: 0;
     font-family: Bebas Neue,  sans-serif;
     font-size: 24px;
+}
+
+.navbar-brand img {
+    height: 30px;
 }
 
 body {
@@ -395,6 +398,10 @@ button {
     font-size: 25px; 
 }
 
+#signup-form button {
+    width: 100%;
+}
+
 /*Media queries */
 /*Additional small media query as not displaying correct on iPhone 12 and S21 during testing */
 @media screen and (max-width: 420px) and (max-height: 700px) {
@@ -603,7 +610,7 @@ button {
     }
 
     #results-screen {
-        margin-top: 100px; 
+        margin-top: 20px; 
         width: 80%;
     }
 
@@ -626,7 +633,7 @@ button {
     }
 }
 
-    /*Tablets */
+    /*Small tablets */
     @media screen and (min-width: 577px) and (max-width: 768px){ 
     .navbar-toggler {
         position: absolute;
@@ -661,18 +668,56 @@ button {
         margin: 5px 0;
     } 
 
+    .page-title {
+        margin-top: 50px;
+        margin-bottom:40px;
+        width: 90%;
+    }
+
+    .page-title h2 {
+        font-size: 36px;
+    }
+
+    .page-title p {
+        font-size: 14px;
+    }
+
+    .page-title li {
+        font-size: 18px;
+    }
+
+    #welcome-screen {
+        margin-bottom: 50px;
+        font-size: 0.5em;
+        width: 90%;
+    }
+
+    #welcome-screen h5 {
+        font-size: 28px;
+    }
+
     #question {
         font-size: 18px;
     }
 
     .quiz-container {
-        width: 50%;
+        width: 80%;
         min-height: 470px;
     }
 
     #answers {
         grid-template-columns: 1fr; /* Single column layout for smaller screens */
         gap: 0;
+    }
+
+    #timer {
+        margin-top: 0;
+        font-size: 20px;
+    }
+
+    #results-screen {
+        margin-top: 20px; 
+        width: 80%;
     }
 }
 
