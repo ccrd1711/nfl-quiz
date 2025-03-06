@@ -721,8 +721,8 @@ button {
     }
 }
 
-/* do you need this below? */
-@media screen and (min-width: 769px) and (max-width: 991px){ 
+/* do you need this below? Larger tabs and screens */
+@media screen and (min-width: 769px) and (max-width: 1200px){ 
     .navbar-toggler {
         position: absolute;
         right: 10px;
@@ -755,4 +755,56 @@ button {
     .nav-item {
         margin: 5px 0;
     } 
+
+    .page-title {
+        margin-top: 50px;
+        margin-bottom:40px;
+        width: 90%;
+    }
+
+    .page-title h2 {
+        font-size: 36px;
+    }
+
+    .page-title p {
+        font-size: 14px;
+    }
+
+    .page-title li {
+        font-size: 18px;
+    }
+
+    #welcome-screen {
+        margin-bottom: 50px;
+        font-size: 0.5em;
+        width: 90%;
+    }
+
+    #welcome-screen h5 {
+        font-size: 28px;
+    }
+
+    #question {
+        font-size: 18px;
+    }
+
+    .quiz-container {
+        width: 80%;
+        min-height: 470px;
+    }
+
+    #answers {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+        gap: 0;
+    }
+
+    #timer {
+        margin-top: 0;
+        font-size: 20px;
+    }
+
+    #results-screen {
+        margin-top: 20px; 
+        width: 80%;
+    }
 }
