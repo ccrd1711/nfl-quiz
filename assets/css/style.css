@@ -789,12 +789,12 @@ button {
     }
 
     #question {
-        font-size: 36px;
+        font-size: 40px; /* Keep all questions on two lines to avoid reduction */
     }
 
     .quiz-container {
         width: 90%;
-        min-height: 500px;
+        min-height: 550px;
     }
 
     #answers {
@@ -807,8 +807,8 @@ button {
     }
 
     #timer {
-        margin-top: 0;
-        font-size: 20px;
+        margin-top: 5px;
+        font-size: 22px;
     }
 
     #results-screen {
