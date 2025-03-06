@@ -721,7 +721,7 @@ button {
     }
 }
 
-/* do you need this below? Larger tabs and screens */
+/* Larger tabs and screens */
 @media screen and (min-width: 769px) and (max-width: 1200px){ 
     .navbar-toggler {
         position: absolute;
@@ -754,7 +754,7 @@ button {
 
     .nav-item {
         margin: 5px 0;
-    } 
+    }
 
     .page-title {
         margin-top: 50px;
@@ -784,13 +784,17 @@ button {
         font-size: 28px;
     }
 
+    #quiz-progress {
+        font-size: 16px;
+    }
+
     #question {
-        font-size: 32px;
+        font-size: 34px;
     }
 
     .quiz-container {
-        width: 80%;
-        min-height: 470px;
+        width: 90%;
+        min-height: 480px;
     }
 
     #answers {
