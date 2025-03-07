@@ -1,24 +1,32 @@
-let timerInterval; 
-let currentQuestionIndex = 0; 
-let score = 0;
-let timePerQuestion;
-let timeLeft;
+let timerInterval; // Stores the interval for the timer
+let currentQuestionIndex = 0; //Tracks current question number
+let score = 0; //Tracks the user's score
+let timePerQuestion; // Stores time limit per question
+let timeLeft; // Remaining time for the current question
 
-function startQuiz(selectedTime) {
-    timePerQuestion = selectedTime;
-    timeLeft = timePerQuestion;
-    document.getElementById("timer").textContent = `Time left: ${timeLeft} seconds`;
+//Fades in the page title and welcome screen
+document.addEventListener("DOMContentLoaded", function () {
+    const pageTitleNav = document.querySelector(".page-title");
+    const welcomeScreen = document.getElementById("welcome-screen");
+    const startButton = document.getElementById("start-button");
 
-    fadeOut(document.querySelector(".page-title"));
+    //fades in the elements
+    function fadeInNav() {
+        pageTitleNav.style.opacity = "1";
+    }
 
-    fadeOut(document.getElementById("welcome-screen"), () => {
-        fadeIn(document.querySelector(".quiz-container"));
-        currentQuestionIndex = 0;
-        showQuestion();
-        console.log("Quiz started", timePerQuestion);
+    //Timeout
+    setTimeout(fadeInNav, 3000);
+
+    //Start button event listener
+    startButton.addEventListener("click", function() {
+        fadeOut(pageTitleNav, function() {
+            fadeIn(welcomeScreen);
+        });
     });
-}
+});
 
+// Toggles the visibility of the rules section when the rules button is clicked.
 document.getElementById("rules-toggle").addEventListener("click", (e) => {
     e.preventDefault();
     const rulesElement = document.getElementById("rules");
@@ -30,6 +38,7 @@ document.getElementById("rules-toggle").addEventListener("click", (e) => {
     }
 });
 
+// Fades out the element and then sets its display to none
 function fadeOut(element, callback) {
     element.classList.remove("fade-in");
     element.classList.add("fade-out");
@@ -41,6 +50,7 @@ function fadeOut(element, callback) {
     }, 500);
 }
 
+// Fades in the element and then sets its display to block
 function fadeIn(element) {
     element.style.display = "block";
     setTimeout(() => {
@@ -49,7 +59,157 @@ function fadeIn(element) {
     }, 10);
 }
 
-//All questions 
+//Starts quiz and sets time limit per question, updates timer and fades in quiz container
+function startQuiz(selectedTime) {
+    timePerQuestion = selectedTime;
+    timeLeft = timePerQuestion;
+    document.getElementById("timer").textContent = `Time left: ${timeLeft} seconds`;
+
+    fadeOut(document.querySelector(".page-title"));
+
+    fadeOut(document.getElementById("welcome-screen"), () => {
+        fadeIn(document.querySelector(".quiz-container"));
+        currentQuestionIndex = 0;
+        showQuestion();
+    });
+}
+
+//Starts quiz with selected time limit (10s for easy, 5s for hard)
+document.getElementById("easy-mode").addEventListener("click", function() {
+    startQuiz(10);
+});
+
+document.getElementById("hard-mode").addEventListener("click", function() {
+    startQuiz(5);
+});
+
+const retryButton = document.getElementById("retry-button");
+
+//Displays the current question and options, resets button styles and states
+//Starts the timer for the question
+function showQuestion() {
+    const questionData = questions[currentQuestionIndex];
+    document.getElementById("question").textContent = questionData.question;
+
+    const answerButtons = document.querySelectorAll(".answer");
+    answerButtons.forEach((button, index) => {
+        button.textContent = questionData.options[index];
+        button.classList.remove("correct", "incorrect"); 
+        button.style.backgroundColor = ""; 
+        button.style.color = "";
+        button.onclick = () => checkAnswer(index);  
+    });
+
+    //Clears focus from answer buttons after click - mobile issue - test this
+    setTimeout(() => {
+        answerButtons.forEach(button => {
+            button.blur();
+            button.classList.remove("hover", "focus"); //Remove any lingering states
+            button.style.pointerEvents = "auto"; //Re-enable pointer events
+        });
+    }, 10);
+
+    document.getElementById("quiz-progress").textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+
+    startTimer();   
+}
+
+//Starts the timer and counts. When time runs out it clears the interval and moves to the next question
+function startTimer() {
+    clearInterval(timerInterval);
+    timeLeft = timePerQuestion;
+    timerInterval = setInterval(() => {
+        if (document.querySelector(".quiz-container").style.display !== "block") {
+            return;
+        }
+
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            handleTimeout();
+            return; 
+        }
+        document.getElementById("timer").textContent = `Time left: ${timeLeft} seconds`;
+        timeLeft--;
+    }, 1000);
+}
+
+//Checks whether answer is right or wrong and moves to next question
+function checkAnswer(selectedIndex) {
+    const questionData = questions[currentQuestionIndex];
+    const answerButtons = document.querySelectorAll(".answer");
+
+    if (selectedIndex === questionData.correctAnswer) {
+        answerButtons[selectedIndex].classList.add("correct");
+        score++;
+    } else {
+        answerButtons[selectedIndex].classList.add("incorrect");
+    }
+    setTimeout(nextQuestion, 1000);
+} 
+
+//Moves to the next question after time runs out after user input
+function nextQuestion() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        showQuestion();
+    } else {
+        showResults();
+    }
+}
+
+//If triggered above, moves to the next question when time runs out
+function handleTimeout() {
+    nextQuestion();
+}
+
+//Displays the results screen and message based on user score
+function showResults() {
+    document.querySelector(".quiz-container").classList.add("fade-out");
+    setTimeout(() => {
+        document.querySelector(".quiz-container").style.display = "none";
+        document.getElementById("results-screen").classList.remove("fade-out");
+        document.getElementById("results-screen").classList.add("fade-in");
+        document.getElementById("results-screen").style.display = "block";
+
+        //Score display 
+        document.getElementById("score-text").textContent = `You scored ${score} out of ${questions.length}!`;
+
+        //Determines message based on user score 
+        let message;
+        if (score >= 0 && score <=4) {
+            message = "Flatter than those balls Tom & co. deflated in 2015. Study, then try again!";
+        } else if (score >= 5 && score <= 9) {
+            message = "You embody the NFC South with this performance. Or the Giants. Either way, not great.";
+        } else if (score >= 10 && score <= 13) {
+            message = "You're a wildcard! Like the Raiders, you could be a contender, but you're not quite there yet.";
+        } else if (score >= 14 && score <= 15) {
+            message = "You're like Pete and Russ in Glendale - almost!";
+        } else if (score === 16) {
+            message = "You're a Super Bowl champ! You know your stuff!";
+        }
+
+        const messageElement = document.getElementById("results-message");
+        messageElement.textContent = message;
+        messageElement.style.display = "block";
+    }, 500); //matching duration of CSS transition
+}
+
+//Resets quiz and fades in welcome screen when pressed
+function retryQuiz() {
+    document.getElementById("results-screen").classList.add("fade-out");
+    setTimeout(() => {
+        document.getElementById("results-screen").style.display = "none";
+        document.getElementById("welcome-screen").classList.remove("fade-out");
+        document.getElementById("welcome-screen").classList.add("fade-in");
+        document.getElementById("welcome-screen").style.display = "block";
+        score = 0;
+        currentQuestionIndex = 0;
+    }, 500);
+}
+
+retryButton.addEventListener("click", retryQuiz);
+
+//All questions for the quiz
 
 const questions = [
     {
@@ -148,166 +308,4 @@ const questions = [
         correctAnswer: 0
     },
 
-    //Bonus question here??
 ];
-
-function showQuestion() {
-    console.log("showing question", currentQuestionIndex);
-    const questionData = questions[currentQuestionIndex];
-    document.getElementById("question").textContent = questionData.question;
-
-    const answerButtons = document.querySelectorAll(".answer");
-    answerButtons.forEach((button, index) => {
-        button.textContent = questionData.options[index];
-        button.classList.remove("correct", "incorrect"); 
-        button.style.backgroundColor = ""; //Reset background colour - mobile bug fix
-        button.style.color = ""; //Reset text colour - mobile bug fix - both needed to clear previous answer styling
-        button.onclick = () => checkAnswer(index);  
-    });
-
-    //Clears focus from answer buttons after click - mobile issue - test 
-    setTimeout(() => {
-        answerButtons.forEach(button => {
-            button.blur();
-            button.classList.remove("hover", "focus"); //Remove any lingering states
-            button.style.pointerEvents = "auto"; //Re-enable pointer events
-        });
-    }, 10);
-
-    document.getElementById("quiz-progress").textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
-
-    startTimer();   
-}
-
-//Checks whether answer is right or wrong 
-
-function checkAnswer(selectedIndex) {
-    const questionData = questions[currentQuestionIndex];
-    const answerButtons = document.querySelectorAll(".answer");
-
-    if (selectedIndex === questionData.correctAnswer) {
-        answerButtons[selectedIndex].classList.add("correct");
-        score++;
-    } else {
-        answerButtons[selectedIndex].classList.add("incorrect");
-    }
-    setTimeout(nextQuestion, 1000);
-} 
-
-//Moves to the next question after time runs out
-function nextQuestion() {
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-        showQuestion();
-    } else {
-        showResults();
-    }
-}
-
-//Remove the highlighting memory from pressing an answer - mobile issue 
-//document.querySelectorAll(".answer").forEach(button => {
-//    button.style.backgroundColor = ""; //resets colour mobile issue
-//});
-
-//Resets timer when oot 
-function startTimer() {
-    clearInterval(timerInterval);
-    timeLeft = timePerQuestion;
-    timerInterval = setInterval(() => {
-        if (document.querySelector(".quiz-container").style.display !== "block") {
-            return;
-        }
-
-        if (timeLeft <= 0) {
-            clearInterval(timerInterval);
-            handleTimeout();
-            return; 
-        }
-        document.getElementById("timer").textContent = `Time left: ${timeLeft} seconds`;
-        timeLeft--;
-    }, 1000);
-}
-
-function handleTimeout() {
-    nextQuestion();
-}
-
-//Results and restart quiz
-function showResults() {
-    console.log("showResults function called");
-    document.querySelector(".quiz-container").classList.add("fade-out");
-    setTimeout(() => {
-        console.log("Fading out quiz cont");
-        document.querySelector(".quiz-container").style.display = "none";
-        document.getElementById("results-screen").classList.remove("fade-out");
-        document.getElementById("results-screen").classList.add("fade-in");
-        document.getElementById("results-screen").style.display = "block";
-
-        //Score display 
-        document.getElementById("score-text").textContent = `You scored ${score} out of ${questions.length}!`;
-        console.log("Score text", score);
-
-        //Determines message based on user score 
-        let message;
-        if (score >= 0 && score <=4) {
-            message = "Flatter than those balls Tom & co. deflated in 2015. Study, then try again!";
-        } else if (score >= 5 && score <= 9) {
-            message = "You embody the NFC South with this performance. Or the Giants. Either way, not great.";
-        } else if (score >= 10 && score <= 13) {
-            message = "You're a wildcard! Like the Raiders, you could be a contender, but you're not quite there yet.";
-        } else if (score >= 14 && score <= 15) {
-            message = "You're like Pete and Russ in Glendale - almost!";
-        } else if (score === 16) {
-            message = "You're a Super Bowl champ! You know your stuff!";
-        }
-        console.log("Message determined:", message);
-
-        const messageElement = document.getElementById("results-message");
-        messageElement.textContent = message;
-        messageElement.style.display = "block";
-        console.log("Message displayed", messageElement.textContent);
-    }, 500); //matching duration of CSS transition
-}
-
-document.getElementById("easy-mode").addEventListener("click", function() {
-    startQuiz(10);
-});
-
-document.getElementById("hard-mode").addEventListener("click", function() {
-    startQuiz(5);
-});
-
-function retryQuiz() {
-    document.getElementById("results-screen").classList.add("fade-out");
-    setTimeout(() => {
-        document.getElementById("results-screen").style.display = "none";
-        document.getElementById("welcome-screen").classList.remove("fade-out");
-        document.getElementById("welcome-screen").classList.add("fade-in");
-        document.getElementById("welcome-screen").style.display = "block";
-        score = 0;
-        currentQuestionIndex = 0;
-    }, 500);
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("DOM loaded"); //delete after testing 
-    const pageTitleNav = document.querySelector(".page-title");
-    const welcomeScreen = document.getElementById("welcome-screen");
-    const startButton = document.getElementById("start-button");
-
-    //fades in the elements
-    function fadeInNav() {
-        console.log("Fading in nav"); //delete after testing
-        pageTitleNav.style.opacity = "1";
-    }
-
-    //Timeout
-    setTimeout(fadeInNav, 3000);
-
-    //Start button event listener
-    startButton.addEventListener("click", function() {
-        fadeOut(pageTitleNav, function() {
-            fadeIn(welcomeScreen);
-        });
-    });
-});
