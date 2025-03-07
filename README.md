@@ -12,12 +12,33 @@ Having understood that JavaScript was going to be all about introducing interact
 
 - 'Analytical' quizzes/games such as these ones are commonplace for NFL fans, and can be a source of pride for a fan when competing with friends etc. Here in Wales I have a group of friends who follow it along with me, and we have had similar games/quizzes in person before. Once we did a speed game to see who could name every team in the NFL the fastest from memory. Little moments like this helped inspire me during this project, as well as knowing I had a dedicated and trustworthy fan base to test the website close to completion. 
 
+## Design 
+
+### Wireframes 
+
+![Landing page PC Wireframe]() ![Quiz window Wireframe]() ![PC Registration wireframe]()
+
 ## Bugs
 
  Fixed bugs | What happened? | Solution 
 -- | -- | -- |
 No. 1 | The question number on the quiz was not increasing in increments of 1, i.e, when you finished question number one, the counter would not change to question number two and so on. Image 'Bug 1.1' below shows the quiz having finished but the question counter still at 1 of 33. Note at this stage of the project that there was going to be 33 questions, but it was later changed to 17. ![Bug1.1](assets/bugs/bug1.1.png)| Image 'Bug 1.2' shows the console in Dev Tools throwing an undefined error as the function showQuestion wasn't running. The null error occurred as it was trying to find 'progress'. I had updated the id in the html to 'quiz-progress' earlier so 'progress' didn't exist. I updated the JS accordingly. ![Bug 1.2](assets/bugs/Bug%201.2%20Quiz%20progress%20timer.png)
 No.2 | The initial 10-second timer implemented into the site was not working on the quiz beginning, or when the question moved from one to the other. | Image 'Bug 2.1' shows the timer function being created and 'Bug 2.2' shows it being called within the function. However on image 'Bug 2.3' you can see the console throwing an initialisation error. At this stage the timeLeft declaration was moved up the JS file and this fixed the initialisation error, but the timer would still not run. startTimer and showQuestion would all log to the console but setInterval and nextQuestion would not, and the console would remain empty when clicking an answer. Declaring the timer globally (image 'Bug 2.4') fixed the issue. 
+
+## Languages used 
+
+* HTML5
+* CSS3
+* JavaScript 
+
+## External Programs Used 
+
+* [Bootstrap v5.3](https://getbootstrap.com/)
+* [Font Awesome](https://fontawesome.com)
+* [Google Fonts](https://fonts.google.com/)
+* [GitHub](https://github.com)
+* Microsoft Paint (For Wireframe mockups)
+
 
 ## Deployment and Accessing Code Workspace 
 

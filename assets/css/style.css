@@ -72,6 +72,10 @@ body, html {
     list-style-position: inside; /*Keeps bullet points beside text rather than container edge */
 }
 
+#rules {
+    display: none; /* initially hidden */
+}
+
 #rules-toggle {
     /* color: white; ??? */
     color: black;
@@ -96,7 +100,7 @@ body, html {
     background: rgb(42, 43, 44);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /*Check this later in accordance to quiz box*/
     margin-top: 50px;
-    /* position: fixed; Keeps in the same place as rules when that disappears */
+    display: none; /*Initially hidden */
     bottom: 100px; /*Keeps above footer */
     opacity: 1; /*initially hidden */
     transition: opacity 0.8s; /*Fade transition*/
@@ -633,7 +637,7 @@ button {
     }
 }
 
-    /*Small tablets */
+    /*Larger screens */
     @media screen and (min-width: 577px) and (max-width: 768px){ 
     .navbar-toggler {
         position: absolute;
@@ -722,7 +726,7 @@ button {
 }
 
 /* Larger tabs and screens */
-@media screen and (min-width: 769px) and (max-width: 1200px){ 
+@media screen and (min-width: 769px) and (max-width: 992px){ 
     .navbar-toggler {
         position: absolute;
         right: 10px;
@@ -736,6 +740,7 @@ button {
     }
 
     .navbar-collapse {
+        display: none;
         position: absolute;
         top: 50px;
         right: 0px;
@@ -745,6 +750,10 @@ button {
         background-color: black;
         padding: 5px 10px;
         border-radius: 6px;
+    }
+
+    .navbar-collapse.show {
+        display: block;
     }
 
     .navbar-nav {
@@ -815,4 +824,24 @@ button {
         margin-top: 20px; 
         width: 80%;
     }
+}
+ 
+/* Extra query to test nav bar issue with Bootstrap */
+@media screen and (min-width: 991px) {
+        .navbar {
+    top:0;
+    left:0;
+    width: 100%;
+    z-index: 1000;
+    background-color: black;
+    border-bottom: 1px solid #222;
+    margin-top: 0;
+    padding-top: 0;
+    font-family: Bebas Neue,  sans-serif;
+    font-size: 24px;
+}
+
+    .navbar-brand img {
+    height: 30px;
+}
 }
