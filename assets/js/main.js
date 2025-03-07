@@ -135,8 +135,14 @@ function startTimer() {
 
 //Checks whether answer is right or wrong and moves to next question
 function checkAnswer(selectedIndex) {
+    if (currentQuestionIndex >= questions.length) return; 
+
     const questionData = questions[currentQuestionIndex];
+    if (!questionData) return; 
+
     const answerButtons = document.querySelectorAll(".answer");
+
+    answerButtons.forEach(button => button.disabled = true);
 
     if (selectedIndex === questionData.correctAnswer) {
         answerButtons[selectedIndex].classList.add("correct");
@@ -144,7 +150,12 @@ function checkAnswer(selectedIndex) {
     } else {
         answerButtons[selectedIndex].classList.add("incorrect");
     }
-    setTimeout(nextQuestion, 1000);
+
+    setTimeout(() => {
+        nextQuestion(); 
+        // Re-enabled buttons after moving to the next question - spamming bug
+        answerButtons.forEach(button => button.disabled = false);
+    }, 1000);
 } 
 
 //Moves to the next question after time runs out after user input
@@ -159,7 +170,9 @@ function nextQuestion() {
 
 //If triggered above, moves to the next question when time runs out
 function handleTimeout() {
-    nextQuestion();
+    if (currentQuestionIndex < questions.length) {
+        nextQuestion();
+    }
 }
 
 //Displays the results screen and message based on user score
