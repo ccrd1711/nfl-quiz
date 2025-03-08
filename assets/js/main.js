@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         pageTitleNav.style.opacity = "1";
     }
 
-    //Timeout
+    //Timeout 
     setTimeout(fadeInNav, 3000);
 
     //Start button event listener
