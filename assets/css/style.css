@@ -19,9 +19,6 @@
 }
 
 body {
-    background-color: darkgrey; 
-    margin: 0;
-    padding: 0;
     background-image: url(../images/nfl\ stadium.jpg); 
     background-size: cover;
     background-position: center; 
@@ -40,51 +37,47 @@ body, html {
     align-items: center;
 }
 
+/* Screen the user sees upon entering the site */
 .page-title {
     padding-top: 20px;
     padding-bottom: 50px;
-    /* background: rgb(42, 43, 44); keep or not?? Mentor meeting */
-    width: 50%;
-    /* border-radius: 10px; Keep if reimplementing the background*/
+    background: rgb(42, 43, 44);
+    width: 60%;
+    border-radius: 10px; 
     margin-top: 50px; 
-    margin-bottom: 100px;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); keep or not?? */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     opacity: 0; /* initially hidden */
     transition: opacity 0.8s ease-in-out; /*Fade transition*/
 }
 
 .page-title h2 {
-    /* color:white; */
-    color: black;   
-    font-family: Oswald, sans-serif; 
+    color:white;   
+    font-family: 'Oswald', sans-serif; 
 }
 
-.page-title li {
-    /* color: white; */
-    color: black;
-    font-family: Oswald, sans-serif; 
+#rules-toggle {
+    color: white;
+    font-family: 'Oswald', sans-serif; 
+    font-size: 24px;
+} 
+
+.page-title li { 
     text-align: center;
     font-size: 24px;
+    font-family: 'Oswald', sans-serif;
 }
 
 .page-title ul {
-    list-style-position: inside; /*Keeps bullet points beside text rather than container edge */
+    color: white;
 }
 
 #rules {
     display: none; /* initially hidden */
 }
 
-#rules-toggle {
-    /* color: white; ??? */
-    color: black;
-    font-family: Oswald, sans-serif; 
-    font-size: 24px;
-}
-
 #start-button {
-    font-family: Oswald, sans-serif; 
+    font-family: 'Oswald', sans-serif; 
     font-size: 24px;
     width: 50%;
 }
@@ -92,7 +85,7 @@ body, html {
 /*Welcome message styling - difficulty choice screen*/
 #welcome-screen {
     font-family: Oswald, sans-serif; 
-    width: 50%;
+    width: 80%;
     margin: auto;
     text-align: center;
     padding: 20px;
@@ -141,8 +134,8 @@ body, html {
 /*Quiz container styling*/
 .quiz-container {
     display: none; /* Hides container until difficulty chosen by user */
-    width: 50%;
-    max-height: 400px;
+    width: 80%;
+    /*min-height: 400px;*/
     margin: 50px auto;
     padding: 10px;
     background-color: rgb(42, 43, 44);
@@ -153,7 +146,7 @@ body, html {
 .quiz-container p,
 .quiz-container h3 {
     color: white;
-    font-family: Bebas Neue, sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
 }
 
 /*Timer */
@@ -173,7 +166,7 @@ body, html {
 
 /* question text */
 #question {
-    font-size: 35px;
+    font-size: 36px;
     font-weight: bold;
     margin-bottom: 20px;
     text-align:center;
@@ -191,13 +184,13 @@ body, html {
     border: 1px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 28px;
+    font-size: 32px;
     color: black;
     transition: background 0.3s ease;
 }
 
 #answers {
-    font-family: Bebas Neue, sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
@@ -229,71 +222,9 @@ body, html {
     background-color: red !important;
 }
 
-/*Register page styling */
-.signup-page {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.signup-container {
-    background-color: #161515;
-    margin-top: 100px;  
-    padding: 20px;
-    width: 600px;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.signup-container h3 {
-    font-family: Oswald, sans-serif;
-    font-size: 36px;
-    text-align: center;
-    margin-bottom: 20px;
-    color: white;
-}
-
-.signup-container button {
-    font-family: Bebas Neue, sans-serif;
-    font-size: 28px;
-}
-
-.form-group {
-    font-family: Oswald, sans-serif;
-    font-size: 28px;
-    margin-bottom: 15px;
-    color:white;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
-    width: 95%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #eb722b;
-    color: black;
-    font-size: 16px;
-    cursor: pointer;
-} 
-
 /* Results screen styling */
 #results-screen {
-    width: 50%;
+    width: 80%;
     margin: auto;
     text-align: center;
     padding: 20px;
@@ -307,7 +238,7 @@ button {
 #results-screen h2,
 #results-screen p {
     color: white;
-    font-family: Bebas Neue, sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
     font-size: 28px;
 }
 
@@ -319,12 +250,12 @@ button {
 }
 
 #results-screen #score-text {
-    font-size: 36px;
+    font-size: 40px;
     color: #eb722b;
 }
 
 #results-screen button {
-    font-family: Bebas Neue, sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
     font-size: 28px;
 }
 
@@ -372,43 +303,82 @@ button {
     color: white;    
 }
 
-.reg-footer /* Different background so different styling */ {
-    background-color: black;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    font-family: arial, sans-serif;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-}
-
-.reg-footer .reg-footer-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.reg-social-icons {
-    margin-bottom: 10px;
-}
-
-.reg-social-icons a {
-    color: white;
-    margin: 0 10px;
-    display: inline-block;
-    font-size: 25px; 
-}
-
 #signup-form button {
     width: 100%;
 }
 
+/*Register page styling */
+.signup-page {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.signup-container {
+    background-color: #161515;
+    margin-top: 100px;  
+    padding: 20px;
+    width: 600px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.signup-container h3 {
+    font-family: Oswald, sans-serif;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.signup-container button {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+}
+
+.form-group {
+    font-family: 'Oswald', sans-serif;
+    font-size: 28px;
+    margin-bottom: 15px;
+    color:white;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 95%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #eb722b;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+} 
+
+
+
 /*Media queries */
 /*Additional small media query as not displaying correct on iPhone 12 and S21 during testing */
-@media screen and (max-width: 420px) and (max-height: 700px) {
+@media screen and (max-width: 426px) and (max-height: 700px) {
+    .navbar {
+        font-size: 18px;
+        width: 100%;
+    }
+
     .navbar-toggler {
         position: absolute;
         right: 10px;
@@ -443,7 +413,7 @@ button {
     }
 
     .page-title {
-        padding-top: 0;
+        background: rgb(42, 43, 44);
         margin-top: 50px;
         margin-bottom:40px;
         width: 90%;
@@ -468,11 +438,12 @@ button {
 
     #start-button {
         font-size: 18px;
+        width: 70%;
     }
 
     #welcome-screen {
         margin-bottom: 50px;
-        width: 90%;
+        margin-top: 20px;
     }
 
     #welcome-screen h5 {
@@ -490,7 +461,8 @@ button {
 
     .quiz-container {
         width: 90%;
-        min-height: 450px;
+        max-height: 350px;
+        margin-top: 25px;
     }
 
     #question {
@@ -503,12 +475,15 @@ button {
         width: 80%;
     }
 
+    #results-screen #score-text {
+        font-size: 30px;
+    }
+
     #quiz-progress {
         font-size: 16px;
     }
 
     #answers {
-        grid-template-columns: 1fr; /* Single column layout for smaller screens */
         gap: 0;
     }
 
@@ -517,12 +492,12 @@ button {
     }
 
     .signup-container {
-        margin-top: 50px;
+        margin-top: 0;
         width: 300px;
     }
 
     .signup-container h3 {
-        font-size: 26px;
+        font-size: 20px; 
     }
 
     .signup-container button {
@@ -533,10 +508,14 @@ button {
     .form-group {
         font-size: 20px;
     }
+
+    .social-icons a {
+        font-size: 20px;
+    }
 }
 
 /*Large phones and small tablets */
-@media screen and (min-width: 421px) and (max-width: 576px) {
+@media screen and (min-width: 427px) and (max-width: 576px) {
     /* nav bar positioning */
     .navbar-toggler {
         position: absolute;
@@ -638,7 +617,7 @@ button {
 }
 
     /*Larger screens */
-    @media screen and (min-width: 577px) and (max-width: 768px){ 
+    @media screen and (min-width: 577px) and (max-width: 767px){ 
     .navbar-toggler {
         position: absolute;
         right: 10px;
@@ -726,7 +705,7 @@ button {
 }
 
 /* Larger tabs and screens */
-@media screen and (min-width: 769px) and (max-width: 992px){ 
+@media screen and (min-width: 768px) and (max-width: 992px){ 
     .navbar-toggler {
         position: absolute;
         right: 10px;
@@ -798,12 +777,15 @@ button {
     }
 
     #question {
-        font-size: 40px; /* Keep all questions on two lines to avoid reduction */
+        font-size: 36px; /* Keep all questions on two lines to avoid reduction */
+        margin-bottom: 0;
     }
 
     .quiz-container {
         width: 90%;
-        min-height: 550px;
+        max-height: 510px;
+        margin: 10px auto;
+        padding-bottom: 10px;
     }
 
     #answers {
@@ -824,24 +806,8 @@ button {
         margin-top: 20px; 
         width: 80%;
     }
-}
- 
-/* Extra query to test nav bar issue with Bootstrap */
-@media screen and (min-width: 991px) {
-        .navbar {
-    top:0;
-    left:0;
-    width: 100%;
-    z-index: 1000;
-    background-color: black;
-    border-bottom: 1px solid #222;
-    margin-top: 0;
-    padding-top: 0;
-    font-family: Bebas Neue,  sans-serif;
-    font-size: 24px;
-}
 
-    .navbar-brand img {
-    height: 30px;
-}
+    .signup-container {
+        margin-top: 50px;
+    }
 }

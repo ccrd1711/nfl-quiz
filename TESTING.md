@@ -6,6 +6,8 @@
 
 * [Automated Testing](#automated-testing)
 
+* [Lighthouse](#lighthouse)
+
 * [Bugs](#bugs)
 
 ## Automated Testing 
@@ -26,8 +28,8 @@
 
 I used Lighthouse in Chrome developer tools to test Performance, Accessibility, Best Practices, and the SEO of the website on both mobile and desktop. The first image below is the desktop score, with the second being the mobile. 
 
-[PC Lighthouse score](/assets/images/features/lighthouse-pc-report.png)
-[Mobile Lighthouse score](/assets/images/features/lighthouse-mobile-report.png)
+![PC Lighthouse score](/assets/images/features/lighthouse-pc-report.png)
+![Mobile Lighthouse score](/assets/images/features/lighthouse-mobile-report.png)
 
 ## Bugs
 
