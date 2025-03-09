@@ -6,7 +6,17 @@
 
 * [Automated Testing](#automated-testing)
 
+* [Validators](#validators)
+
 * [Lighthouse](#lighthouse)
+
+* [Manual Testing](#manual-testing)
+
+* [User Stories](#user-stories)
+
+* [New Visitors](#new-visitors-to-the-site)
+
+* [Returning Visitors](#returning-visitors)
 
 * [Bugs](#bugs)
 
@@ -24,14 +34,35 @@
 
 * JS file main.js passed with no errors found. 
 
-## Lighthouse 
+### Lighthouse 
 
 I used Lighthouse in Chrome developer tools to test Performance, Accessibility, Best Practices, and the SEO of the website on both mobile and desktop. The first image below is the desktop score, with the second being the mobile. 
 
 ![PC Lighthouse score](/assets/images/features/lighthouse-pc-report.png)
 ![Mobile Lighthouse score](/assets/images/features/lighthouse-mobile-report.png)
 
-## Bugs
+## Manual Testing
+
+### User Stories 
+
+### New visitors to the site 
+
+| Goal | How is it achieved? | Pass or Fail | 
+| --- | :---: | ---: |
+| As a new user, I want to read a clear introduction to the quiz that I understand what the topic is before starting | The user is welcomed to the quiz with a title explaining that the quiz is centered around divisions in the NFL | Pass 
+| As a new user I want to easily find and read the quiz rules so that I know how to play | The user is clearly highlighted to the rules immmediately upon entering the site which are available in a dropdown menu for easy access and clean design | Pass
+| As a new user I want to choose my difficulty level so that I can play at a pace that suits me | The user has two clear options on the buttons that allow them to set their preferred time limit per question | Pass 
+| As a new user I want to answer multiple-choice questions to test my knowledge | The user has the same amount of options on each question for uniformity in experience and design. There are progress trackers (timer and question numnber), and interactive buttons that provide instant feedback | Pass 
+| As a new user I want to see my final score so that I know how well I performed | A results screen at the end of the quiz displaying the final score and a short comical message based on NFL culture/folklore shows the player performance level | Pass 
+
+### Returning visitors 
+
+| Goal | How is it achieved? | Pass or Fail | 
+| --- | :---: | ---: |
+| As a returning user I want to restart the quiz easily so that I can try again and improve my score | A 'retry' button clearly marked is available at the end of each quiz difficulty which brings you back to the difficulty selection again (as rules have already been read) | Pass #
+| As a returning user I want to be able to 
+
+### Bugs
 
  Fixed bugs | What happened? | Solution 
 -- | -- | -- |

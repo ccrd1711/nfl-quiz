@@ -207,6 +207,24 @@ function showResults() {
     }, 500); //matching duration of CSS transition
 }
 
+// Allows user to share score on social media
+document.getElementById("share-score").addEventListener("click", () => {
+    const score = document.getElementById("score-text").textContent;
+    const shareText = `I scored ${score} in the Quickfire NFL Divisions Quiz! Can you beat me?`;
+    const shareUrl = window.location.href;
+
+    if (navigator.share) {
+        navigator.share({
+            title: "NFL Quiz Score",
+            text: shareText,
+            url: shareUrl
+        }).catch(err => console.log("Sharing failed", err));
+    } else {
+        navigator.clipboard.writeText(`${shareText} ${shareUrl}`);
+        alert("Link copied! Share it with your friends!");
+    }
+});
+
 //Resets quiz and fades in welcome screen when pressed
 function retryQuiz() {
     document.getElementById("results-screen").classList.add("fade-out");

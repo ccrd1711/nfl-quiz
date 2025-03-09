@@ -259,6 +259,13 @@ body, html {
     font-size: 28px;
 }
 
+/* Social sharing */
+#share-score {
+    display: block;
+    margin: 10px auto;
+}
+
+
 /*Footer Styles */
 .footer {
     padding: 20px 0;
