@@ -38,8 +38,8 @@
 
 I used Lighthouse in Chrome developer tools to test Performance, Accessibility, Best Practices, and the SEO of the website on both mobile and desktop. The first image below is the desktop score, with the second being the mobile. 
 
-![PC Lighthouse score](/assets/images/features/lighthouse-pc-report.png)
-![Mobile Lighthouse score](/assets/images/features/lighthouse-mobile-report.png)
+![PC Lighthouse score](/assets/images/validation/lighthouse-pc-report.png)
+![Mobile Lighthouse score](/assets/images/validation/lighthouse-mobile-report.png)
 
 ## Manual Testing
 
@@ -60,7 +60,17 @@ I used Lighthouse in Chrome developer tools to test Performance, Accessibility, 
 | Goal | How is it achieved? | Pass or Fail | 
 | --- | :---: | ---: |
 | As a returning user I want to restart the quiz easily so that I can try again and improve my score | A 'retry' button clearly marked is available at the end of each quiz difficulty which brings you back to the difficulty selection again (as rules have already been read) | Pass #
-| As a returning user I want to be able to 
+| As a returning user I want to be able to quickly access the quiz so that I don't have to go through all the rules again | The rules section is collapsable, and also on 'Retry' you are taken to the second screen - skipping the rules. All to save the user time in being able to do the quiz again | Pass 
+| As a returning user I want to be able to sign up for updates from the site for future quizzes or updates | Having enjoyed the quiz and possibly sharing it, users entering the "upcoming" section are welcomed with a form to sign up for site updates and the form works correctly | Pass 
+| As a returning user I want to be able to share my results with friends and family | Having completed the quiz there is a share button allowing users to share their result with an accompanying link to the quiz | Pass 
+| As a returning user I want to be able to know that I have chosen the correct difficulty for the quiz | Having commenced the quiz the timer shows and counts immediately so the user will know which one they have chosen. They always have the home button available to return if they have pressed the wrong option | Pass 
+
+### New Visitor testing 
+| Story | Function | Footage | 
+| --- | :---: | ---: | 
+| User Story 1 | Opening the homepage and quiz title | ![gif of landing](/assets/images/features/intro-quiz.gif)
+| User Story 2 | Using the rules dropdown | ![gif of rules dropdown](/assets/images/features/rules-drop.gif) 
+| User Story 3 | Choosing difficulty | ![gif of difficulty selection](/assets/images/features/choose-diff.gif)
 
 ### Bugs
 

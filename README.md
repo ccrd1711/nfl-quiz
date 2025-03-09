@@ -146,6 +146,10 @@ Visit the [NFL Quickfire Divisional quiz here](https://ccrd1711.github.io/nfl-qu
 - All options come with a retry button that will take you back to the **Choose difficulty** screen by design, not back to the rules screen. This is because the user will have already looked at those and saves time should they want to have another go. 
 - Most of the messages under 100% have some humour in them and have cultural references to special moments in NFL history.
 
+![Screenshot from mobile with shareable button](/assets/images/features/social-sharing.png)
+
+- This screenshot shows, on a mobile view, the button that will allow you to share your score with friends which provides a link to the quiz.
+
 ![Screenshot of the registration form to sign up](/assets/images/features/active-upcoming-reg.png)
 
 - This screenshot shows the 'active-ness' on the "Upcoming" button in the top left, as it turns white when clicked, and the form the user is faced with upon entering this page. 
@@ -162,7 +166,9 @@ Visit the [NFL Quickfire Divisional quiz here](https://ccrd1711.github.io/nfl-qu
 
 - Furthermore it could evolve in to a multi-faceted quiz in that it covers more sports. The NBA is a very similar system and it itself has 30 teams split into East and West, although the divisions are a bit trickier. Still, I think there's a possbility there perhaps just formatted slightly different. 
 
-- Lastly, as mentioned before, there is scope to perhaps include a pop out box of information for those who need a bit more information on the NFL divisional system. As I said previously it is definitely a quiz for those who follow the sport with at least a decent interest, however it could be a fun addition for users who just want to guess and have a bit of fun with friends on a new topic.
+- There is scope to perhaps include a pop out box of information for those who need a bit more information on the NFL divisional system. As I said previously it is definitely a quiz for those who follow the sport with at least a decent interest, however it could be a fun addition for users who just want to guess and have a bit of fun with friends on a new topic.
+
+- Lastly I think there could be scope to enter in an ability to store results for the user. This would allow them to be able to reference their scores every time they return and try to beat them, or share them with friends. 
 
 # Technologies used 
 
