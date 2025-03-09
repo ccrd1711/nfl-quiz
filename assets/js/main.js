@@ -207,7 +207,7 @@ function showResults() {
     }, 500); //matching duration of CSS transition
 }
 
-// Allows user to share score on social media
+// Allows user to share their result
 document.getElementById("share-score").addEventListener("click", () => {
     const score = document.getElementById("score-text").textContent;
     const shareText = `I scored ${score} in the Quickfire NFL Divisions Quiz! Can you beat me?`;
@@ -218,8 +218,9 @@ document.getElementById("share-score").addEventListener("click", () => {
             title: "NFL Quiz Score",
             text: shareText,
             url: shareUrl
-        }).catch(err => console.log("Sharing failed", err));
-    } else {
+        }).catch(err => {
+    });
+ } else {
         navigator.clipboard.writeText(`${shareText} ${shareUrl}`);
         alert("Link copied! Share it with your friends!");
     }
