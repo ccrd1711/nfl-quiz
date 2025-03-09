@@ -18,7 +18,15 @@
 
 * [Returning Visitors](#returning-visitors)
 
-* [Bugs](#bugs)
+* [New Visitor Testing](#new-visitor-testing)
+
+* [Return Visitor Testing](#returning-visitor-testing)
+
+* [Bugs/Issues/Fixes](#bugsissuesfixes)
+
+* [Bug Images](#bug-images)
+
+* [Responsive Test](#responsive-test)
 
 ## Automated Testing 
 
@@ -81,9 +89,32 @@ I used Lighthouse in Chrome developer tools to test Performance, Accessibility, 
 | User Story 8 | Registration for future updates or changes | ![Working registration form](/assets/images/features/reg-form-working.gif)
 | User Story 10 | Ensuring you have chosen correctly | Please see gif above in User Story 4 as this shows the timer working along the bottom which would show the user if they have chosen the right one
 
-### Bugs
+### Bugs/Issues/Fixes
 
  Fixed bugs | What happened? | Solution 
 -- | -- | -- |
-No. 1 | The question number on the quiz was not increasing in increments of 1 (img Bug 1.1), i.e, when you finished question number one, the counter would not change to question number two and so on.| Image 'Bug 1.2' shows the console in Dev Tools throwing an undefined error as the function showQuestion wasn't running. The null error occurred as it was trying to find 'progress'. I had updated the id in the html to 'quiz-progress' earlier so 'progress' didn't exist. I updated the JS accordingly. 
-No.2 | The initial 10-second timer implemented into the site was not working on the quiz beginning, or when the question moved from one to the other. | Image 'Bug 2.1' shows the timer function being created and 'Bug 2.2' shows it being called within the function. However on image 'Bug 2.3' you can see the console throwing an initialisation error. At this stage the timeLeft declaration was moved up the JS file and this fixed the initialisation error, but the timer would still not run. startTimer and showQuestion would all log to the console but setInterval and nextQuestion would not, and the console would remain empty when clicking an answer. Declaring the timer globally (image 'Bug 2.4') fixed the issue. 
+No. 1 | The question number on the quiz was not increasing in increments of 1 (img bug1.1), i.e, when you finished question number one, the counter would not change to question number two and so on.| Image 'bug1.2' shows the console in Dev Tools throwing an undefined error as the function showQuestion wasn't running. The null error occurred as it was trying to find 'progress'. I had updated the id in the html to 'quiz-progress' earlier so 'progress' didn't exist. I updated the JS accordingly. 
+No.2 | The initial 10-second timer implemented into the site was not working on the quiz beginning, or when the question moved from one to the other. | Image 'bug2.1' shows the timer function being created and 'bug2.2' shows it being called within the function. However on image 'bug2.3' you can see the console throwing an initialisation error. At this stage the timeLeft declaration was moved within the JS file and this fixed the initialisation error, but the timer would still not run. The current fixed code ensures that timerInterval was introduced as globally accessible, that any intervals were cleared without letting them potentially bunch, ensuring only one timer runs at a time.   
+No. 3 | The 'Hard' quiz version briefly showed 10 seconds before flicking to 5 | Image 'bug3.1' shows the initial code where the function was allowing the timer to display the default briefly before updating. But now the code reflects the selected time before the fade transition (Image 'bug3.2') 
+No. 4 | On mobile there was a trace left by user input whereby if you selected the second option of the four, the second option on the next question was highlighted in blue (Image bug4.1)| Unfortunately I didn't take a code snippet of the code before the fix but this issue was fixed in the current code by making sure all buttons and options were reset/deselected once a user clicked an answer and any states were cleared before the new question appeared.
+No. 5 | An error was thrown in the console from my JS when the answers were spam answered (image 'bug5.1'). Although the quiz is not designed to be spam answered it was best avoided. | This was corrected by disabling the buttons after the first click, disabling the ability to spam answer, and then re-enabling them after the next question is displayed. The error no longer shows. 
+
+### Bug Images 
+
+| Bug Number | Snippet | Fixed | 
+| --- | :---: | ---: |  
+| Bug 1.1 | ![bug 1.1](/assets/images/bugs/bug1.1.png) | Yes
+| Bug 1.2 | ![bug 1.2](/assets/images/bugs/bug1.2.png) | Yes
+| Bug 2.1 | ![bug 2.1](/assets/images/bugs/bug2.1.png) | Yes
+| Bug 2.2 | ![bug 2.2](/assets/images/bugs/bug2.2.png) | Yes
+| Bug 2.3 | ![bug 2.3](/assets/images/bugs/bug2.3.png) | Yes
+| Bug 3.1 | ![bug 3.1](/assets/images/bugs/bug3.1.png) | Yes
+| Bug 3.2 | ![bug 3.2](/assets/images/bugs/bug3.2.png) | Yes
+| Bug 4.1 | ![bug 4.1](/assets/images/bugs/bug4.1.png) | Yes
+| Bug 5.1 | ![bug 5.1](/assets/images/bugs/bug5.1.png) | Yes 
+
+## Responsive Tests 
+
+![Home screen responsiveness test](/assets/images/features/responsive-one.gif)
+![Reg screen responsiveness test](/assets/images/features/responsive-two.gif)
+![Quiz screen responsiveness test](/assets/images/features/responsive-three.gif)

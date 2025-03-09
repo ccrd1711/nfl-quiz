@@ -190,6 +190,7 @@ Visit the [NFL Quickfire Divisional quiz here](https://ccrd1711.github.io/nfl-qu
 * Microsoft Paint (For Wireframe mockups)
 * [Google](https://google.com)
 * [ChatGPT](https://chatgpt.com)
+* [MP4 to Gif Converter](https://www.freeconvert.com/convert/mp4-to-gif/download)
 
 # Credits 
 
