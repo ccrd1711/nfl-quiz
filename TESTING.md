@@ -65,12 +65,21 @@ I used Lighthouse in Chrome developer tools to test Performance, Accessibility, 
 | As a returning user I want to be able to share my results with friends and family | Having completed the quiz there is a share button allowing users to share their result with an accompanying link to the quiz | Pass 
 | As a returning user I want to be able to know that I have chosen the correct difficulty for the quiz | Having commenced the quiz the timer shows and counts immediately so the user will know which one they have chosen. They always have the home button available to return if they have pressed the wrong option | Pass 
 
-### New Visitor testing 
+### New Visitor Testing 
 | Story | Function | Footage | 
 | --- | :---: | ---: | 
 | User Story 1 | Opening the homepage and quiz title | ![gif of landing](/assets/images/features/intro-quiz.gif)
 | User Story 2 | Using the rules dropdown | ![gif of rules dropdown](/assets/images/features/rules-drop.gif) 
 | User Story 3 | Choosing difficulty | ![gif of difficulty selection](/assets/images/features/choose-diff.gif)
+| User Story 4 | Multiple choice | ![gif of choices in quiz](/assets/images/features/quiz-choices.gif)
+| User Story 5 | Message at end of quiz | ![gif of quiz message](/assets/images/features/message-share-retry.gif)
+
+### Returning Visitor Testing
+| Story | Function | Footage | 
+| --- | :---: | ---: | 
+| User Stories 6, 7 & 9 | Restarting the quiz, skipping rules, and sharing results | Please see gif above in User Story 5 as this shows the window with all these buttons available 
+| User Story 8 | Registration for future updates or changes | ![Working registration form](/assets/images/features/reg-form-working.gif)
+| User Story 10 | Ensuring you have chosen correctly | Please see gif above in User Story 4 as this shows the timer working along the bottom which would show the user if they have chosen the right one
 
 ### Bugs
 
